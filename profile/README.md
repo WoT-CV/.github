@@ -2,7 +2,7 @@
 
 ## Roadmap
 
-### Release 1.0
+### Release 1.0 (CURRENT)
 **Inicjalna wersja projektu, która zawiera podstawowe założone funkcjonalności.**
 
 - Funkcjonalności:
