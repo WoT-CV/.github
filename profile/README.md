@@ -10,7 +10,9 @@
     - `Strona główna witryny`
     - `Strona rejestracji`
     - `Strona graczy do spradzenia`
+    - `Regulamin` oraz `Polityka Prywatności`
     - Obsługa news'ów na stronie głównej
+    - Obsuga chatu `smartsupp` do lepszej komunikacji z użytkownikami
     - Możliwość kupna konta premium za pomocą `Stripe`, `PayPal`, `Przelewy24`
     - Dodanie następujących paneli:
         - `Panel admina`
