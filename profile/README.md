@@ -10,7 +10,7 @@
     - `Strona główna witryny`
     - `Strona rejestracji`
     - `Strona graczy do spradzenia`
-    - Popup z newsami
+    - Obsługa news'ów na stronie głównej
     - Możliwość kupna konta premium za pomocą `Stripe`, `PayPal`, `Przelewy24`
     - Dodanie następujących paneli:
         - `Panel admina`
