@@ -17,15 +17,6 @@
         - `Panel filtrów`
         - `Panel konta premium`
         - `Panel newsów`
-- Lista TODO:
-    - Dodanie przycisku w `Panel admina` który ręcznie będzie triggerował odświeżenie dostępów użytkowników klanu
-    - Dodanie blokady na pobranie więcej niż `10` graczy do sprawdzenia na `dobę` dla użytkowników `non-premium`
-    - Możliwość kupna konta premium za pomocą `Stripe`, `PayPal`, `Przelewy24`
-        - należy zaimplementować integrację z payment providerami
-    - Dodanie następujących `schedulerów`:
-        - `Odświeżanie dostępów graczy co 5minut`
-        - `Odświeżanie danych graczy do sprawdzenia którzy grali w wot'a co 4 godziny`
-        - ``
 
 ### Release 1.1
 **Wersja ma rozwinąć kluczowe funkcjonalności 1.0 oraz wprowadzić kilka nowych rozwiązań.**
