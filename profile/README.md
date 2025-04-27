@@ -12,8 +12,8 @@ Projekt wspiera rekrutację graczy do klanów w grze World of Tanks. Umożliwia 
 
 **Backend**
 
-- Javie 21
-- Spring Boot 3.4.X
+- Java 21
+- Spring Boot 3.4
 - Architektura Heksagonalna
 - Wątki wirtualne
 - Spock Framework
@@ -26,10 +26,10 @@ Projekt wspiera rekrutację graczy do klanów w grze World of Tanks. Umożliwia 
 
 **Frontend**
 
-- React: 19.X.X
-- Redux: 5.X.X
-- TypeScript: 5.8.X
-- Vite: 6.2.X
-- Yarn: 4.5.X
-- Material-UI: 7.X.X
-- ESLint: 9.22.X
+- React 19.X.X
+- Redux 5.X.X
+- Material-UI 7.X.X
+- TypeScript
+- Vite
+- Yarn
+- ESLint
