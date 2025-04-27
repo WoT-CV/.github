@@ -26,10 +26,16 @@ Projekt wspiera rekrutację graczy do klanów w grze World of Tanks. Umożliwia 
 
 **Frontend**
 
-- React 19.X.X
-- Redux 5.X.X
-- Material-UI 7.X.X
-- TypeScript
+- React 19
+- TypeScript 5.X.X
+- Material-UI v7
+- Redux
 - Vite
+- Vitest
+- React Testing Library
+- MSW
+- React router
+- Formik
+- i18next
 - Yarn
 - ESLint
