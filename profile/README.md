@@ -5,7 +5,7 @@
 <!-- ─────────────────────────────────────────────────────────────────────────── -->
 <a id="english"></a>
 
-# [WoT-CV](https://wot-cv.com) – Player Recruitment System for *[World of Tanks]*[1] Clans
+# [WoT-CV](https://wot-cv.com) – Player Recruitment System for *[World of Tanks](https://worldoftanks.eu/)* Clans
 
 ## Table of Contents
 1. [Description](#description)
@@ -104,7 +104,7 @@ Hobby project.
 <!-- ─────────────────────────────────────────────────────────────────────────── -->
 <a id="polski"></a>
 
-# [WoT-CV](https://wot-cv.com) – System rekrutacji graczy do klanów *[World of Tanks]*[1]
+# [WoT-CV](https://wot-cv.com) – System rekrutacji graczy do klanów *[World of Tanks](https://worldoftanks.eu/)*
 
 ## Spis treści
 1. [Opis](#opis)
@@ -196,5 +196,3 @@ Projekt o charakterze hobbystycznym.
 Nazwy i znaki towarowe *World of Tanks* należą do Wargaming.net.
 
 ---
-
-[1]: https://worldoftanks.eu/
