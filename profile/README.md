@@ -23,6 +23,10 @@
 # [WoT-CV](https://wot-cv.com) – Player Recruitment System for *[World of Tanks](https://worldoftanks.eu/)* Clans
 
 ## Table of Contents
+
+</div>
+<!-- END CENTER -->
+
 1. [Description](#description)
 2. [Key Features](#key-features)
 3. [Business Model](#business-model)
@@ -33,6 +37,9 @@
 
 ---
 
+<!-- BEGIN CENTER -->
+<div align="center">
+
 ## Description
 **[WoT-CV](https://wot-cv.com)** is a web application that streamlines the recruitment process for *[World of Tanks](https://worldoftanks.eu/)* clans.  
 Created as a hobby project by **[Daniel Owczarczyk](https://www.linkedin.com/in/daniel-owczarczyk-8b89a6150)** and  **[Marek Brajerski](https://www.linkedin.com/in/marek-brajerski)**, it is designed to simplify a recruiter’s daily work.
@@ -40,6 +47,10 @@ Created as a hobby project by **[Daniel Owczarczyk](https://www.linkedin.com/in/
 ---
 
 ## Key Features
+
+</div>
+<!-- END CENTER -->
+
 - **Potential-recruit search** – automatically finds players matching clan requirements.  
 - **Advanced search filters** – configurable criteria based on statistics, activity, or preferred language.  
 - **Admin panel** – manage clan-member permissions.  
@@ -49,6 +60,9 @@ Created as a hobby project by **[Daniel Owczarczyk](https://www.linkedin.com/in/
 - **Auto-invite plugin** – removes the need to send invitations manually.
 
 ---
+
+<!-- BEGIN CENTER -->
+<div align="center">
 
 ## Business Model
 | Tier        | Capabilities                               | Limitations                                                                |
@@ -93,6 +107,10 @@ Created as a hobby project by **[Daniel Owczarczyk](https://www.linkedin.com/in/
 ---
 
 ## User Requirements
+
+</div>
+<!-- END CENTER -->
+
 1. A **[Wargaming.net](https://wargaming.net)** account.  
 2. Membership in a *[World of Tanks](https://worldoftanks.eu/)* clan.  
 3. One of the following clan roles: **Commander**, **Executive Officer**, **Personnel Officer**, **Combat Officer**, **Intelligence Officer**, **Quartermaster**, **Recruitment Officer**, or **Junior Officer**.  
@@ -101,9 +119,11 @@ Created as a hobby project by **[Daniel Owczarczyk](https://www.linkedin.com/in/
 
 ---
 
+<!-- BEGIN CENTER -->
+<div align="center">
+
 ## Authors
-- **[Daniel Owczarczyk](https://www.linkedin.com/in/daniel-owczarczyk-8b89a6150)**  
-- **[Marek Brajerski](https://www.linkedin.com/in/marek-brajerski)**
+**[Daniel Owczarczyk](https://www.linkedin.com/in/daniel-owczarczyk-8b89a6150)** && **[Marek Brajerski](https://www.linkedin.com/in/marek-brajerski)**
 
 ---
 
@@ -113,6 +133,11 @@ Hobby project.
 
 ---
 
+</div>
+<!-- END CENTER -->
+<!-- BEGIN CENTER -->
+<div align="center">
+
 <!-- ─────────────────────────────────────────────────────────────────────────── -->
 <!-- WERSJA POLSKA                                                             -->
 <!-- ─────────────────────────────────────────────────────────────────────────── -->
@@ -121,6 +146,10 @@ Hobby project.
 # [WoT-CV](https://wot-cv.com) – System rekrutacji graczy do klanów *[World of Tanks](https://worldoftanks.eu/)*
 
 ## Spis treści
+
+</div>
+<!-- END CENTER -->
+
 1. [Opis](#opis)
 2. [Główne funkcjonalności](#główne-funkcjonalności)
 3. [Model biznesowy](#model-biznesowy)
@@ -131,6 +160,9 @@ Hobby project.
 
 ---
 
+<!-- BEGIN CENTER -->
+<div align="center">
+
 ## Opis
 **[WoT-CV](https://wot-cv.com)** to aplikacja webowa wspierająca proces rekrutacji graczy do klanów w grze *[World of Tanks](https://worldoftanks.eu/)*.
 Projekt powstał jako inicjatywa hobbystyczna autorów – **[Daniela Owczarczyka](https://www.linkedin.com/in/daniel-owczarczyk-8b89a6150)** i **[Marka Brajerskiego](https://www.linkedin.com/in/marek-brajerski)** – i ma na celu uproszczenie pracy rekruterów klanowych.
@@ -138,6 +170,10 @@ Projekt powstał jako inicjatywa hobbystyczna autorów – **[Daniela Owczarczyk
 ---
 
 ## Główne funkcjonalności
+
+</div>
+<!-- END CENTER -->
+
 - **Wyszukiwanie potencjalnych rekrutów** – automatyczne odnajdywanie graczy spełniających wymagania klanu.  
 - **Zaawansowane filtry wyszukiwania** – konfigurowalne kryteria dotyczące statystyk, aktywności czy języka komunikacji.  
 - **Panel administracyjny** – zarządzanie uprawnieniami członków klanu.  
@@ -147,6 +183,9 @@ Projekt powstał jako inicjatywa hobbystyczna autorów – **[Daniela Owczarczyk
 - **Wtyczka do automatycznego zapraszania** – eliminuje konieczność ręcznego wysyłania zaproszeń.
 
 ---
+
+<!-- BEGIN CENTER -->
+<div align="center">
 
 ## Model biznesowy
 | Wariant   | Możliwości                       | Ograniczenia                                                               |
@@ -191,6 +230,10 @@ Projekt powstał jako inicjatywa hobbystyczna autorów – **[Daniela Owczarczyk
 ---
 
 ## Wymagania dla użytkowników
+
+</div>
+<!-- END CENTER -->
+
 1. Posiadanie konta w domenie **[Wargaming.net](https://wargaming.net)**.  
 2. Członkostwo w klanie gry *[World of Tanks](https://worldoftanks.eu/)*.
 3. Odpowiednia rola w klanie: **Dowódca**, **Oficer Wykonawczy**, **Oficer Kadrowy**, **Oficer Polowy**, **Oficer Wywiadu**, **Kwatermistrz**, **Oficer Werbunkowy** lub **Młodszy Oficer**.  
@@ -199,9 +242,11 @@ Projekt powstał jako inicjatywa hobbystyczna autorów – **[Daniela Owczarczyk
 
 ---
 
+<!-- BEGIN CENTER -->
+<div align="center">
+
 ## Autorzy
-- **[Daniel Owczarczyk](https://www.linkedin.com/in/daniel-owczarczyk-8b89a6150)**  
-- **[Marek Brajerski](https://www.linkedin.com/in/marek-brajerski)**
+**[Daniel Owczarczyk](https://www.linkedin.com/in/daniel-owczarczyk-8b89a6150)** && **[Marek Brajerski](https://www.linkedin.com/in/marek-brajerski)**
 
 ---
 
@@ -210,3 +255,6 @@ Projekt o charakterze hobbystycznym.
 Nazwy i znaki towarowe *[World of Tanks](https://worldoftanks.eu/)* należą do [Wargaming.net](https://wargaming.net).
 
 ---
+
+</div>
+<!-- END CENTER -->
