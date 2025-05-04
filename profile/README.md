@@ -94,7 +94,7 @@ Created as a hobby project by **[Daniel Owczarczyk](https://www.linkedin.com/in/
 
 ## License
 Hobby project.  
-*[World of Tanks](https://worldoftanks.eu/)* is a trademark of Wargaming.net.
+*[World of Tanks](https://worldoftanks.eu/)* is a trademark of [Wargaming.net](https://wargaming.net).
 
 ---
 
@@ -117,7 +117,7 @@ Hobby project.
 ---
 
 ## Opis
-**[WoT-CV](https://wot-cv.com)** to aplikacja webowa wspierająca proces rekrutacji graczy do klanów w grze *[World of Tanks](https://worldoftanks.eu/)*
+**[WoT-CV](https://wot-cv.com)** to aplikacja webowa wspierająca proces rekrutacji graczy do klanów w grze *[World of Tanks](https://worldoftanks.eu/)*.
 Projekt powstał jako inicjatywa hobbystyczna autorów – **[Daniela Owczarczyka](https://www.linkedin.com/in/daniel-owczarczyk-8b89a6150)** i **[Marka Brajerskiego](https://www.linkedin.com/in/marek-brajerski)** – i ma na celu uproszczenie pracy rekruterów klanowych.
 
 ---
@@ -177,7 +177,7 @@ Projekt powstał jako inicjatywa hobbystyczna autorów – **[Daniela Owczarczyk
 
 ## Wymagania dla użytkowników
 1. Posiadanie konta w domenie **[Wargaming.net](https://wargaming.net)**.  
-2. Członkostwo w klanie gry *[World of Tanks](https://worldoftanks.eu/)*
+2. Członkostwo w klanie gry *[World of Tanks](https://worldoftanks.eu/)*.
 3. Odpowiednia rola w klanie: **Dowódca**, **Oficer Wykonawczy**, **Oficer Kadrowy**, **Oficer Polowy**, **Oficer Wywiadu**, **Kwatermistrz**, **Oficer Werbunkowy** lub **Młodszy Oficer**.  
 
 > **Uwaga:** Serwis nie wymaga udostępniania danych osobowych – korzysta wyłącznie z publicznych danych uzyskanych poprzez oficjalne **[Wargaming.net API](https://developers.wargaming.net/)** oraz mechanizm **[OpenID](https://openid.net/)**.
@@ -192,6 +192,6 @@ Projekt powstał jako inicjatywa hobbystyczna autorów – **[Daniela Owczarczyk
 
 ## Licencja
 Projekt o charakterze hobbystycznym.  
-Nazwy i znaki towarowe *[World of Tanks](https://worldoftanks.eu/)* należą do Wargaming.net.
+Nazwy i znaki towarowe *[World of Tanks](https://worldoftanks.eu/)* należą do [Wargaming.net](https://wargaming.net).
 
 ---
