@@ -14,7 +14,7 @@
 </p> 
 </br>
 
-**[ENGLISH](#english)|[POLSKI](#polski)**
+**[ENGLISH](#english)&nbsp;&nbsp;|&nbsp;&nbsp;[POLSKI](#polski)**
 
 <!-- ─────────────────────────────────────────────────────────────────────────── -->
 <!-- ENGLISH VERSION                                                            -->
