@@ -5,12 +5,12 @@
 <p>
   <img src="https://github.com/user-attachments/assets/7ec675d4-d52c-4bb5-b5f7-049e33376994"
        alt="WoT-CV Icon"
-       width="64" />
+       width="48" />
 </p>
 <p>
   <img src="https://github.com/user-attachments/assets/45c15eeb-0998-4b90-9809-d57590186130"
        alt="WoT-CV Logo"
-       width="256" />
+       width="200" />
 </p> 
 </br>
 
