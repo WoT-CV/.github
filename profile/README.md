@@ -1,11 +1,11 @@
 **[ENGLISH](#english) | [POLSKI](#polski)**
 
-<!-- ────────────────────────────────────────────────────────────────────────── -->
-<!-- ENGLISH VERSION                                                          -->
-<!-- ────────────────────────────────────────────────────────────────────────── -->
+<!-- ─────────────────────────────────────────────────────────────────────────── -->
+<!-- ENGLISH VERSION                                                            -->
+<!-- ─────────────────────────────────────────────────────────────────────────── -->
 <a id="english"></a>
 
-# WoT-CV – Player Recruitment System for *World of Tanks* Clans
+# [WoT-CV](https://wot-cv.com) – Player Recruitment System for *[World of Tanks]*[1] Clans
 
 ## Table of Contents
 1. [Description](#description)
@@ -19,8 +19,9 @@
 ---
 
 ## Description
-**WoT-CV** is a web application that streamlines the recruitment process for *World of Tanks* clans.  
-Created as a hobby project by **[Daniel Owczarczyk](https://www.linkedin.com/in/daniel-owczarczyk-8b89a6150)** and **[Marek Brajerski](https://www.linkedin.com/in/marek-brajerski)**, it is designed to simplify a recruiter’s daily work.
+**[WoT-CV](https://wot-cv.com)** is a web application that streamlines the recruitment process for *World of Tanks* clans.  
+Created as a hobby project by **[Daniel Owczarczyk](https://www.linkedin.com/in/daniel-owczarczyk-8b89a6150)** and  
+**[Marek Brajerski](https://www.linkedin.com/in/marek-brajerski)**, it is designed to simplify a recruiter’s daily work.
 
 ---
 
@@ -78,11 +79,11 @@ Created as a hobby project by **[Daniel Owczarczyk](https://www.linkedin.com/in/
 ---
 
 ## User Requirements
-1. A **Wargaming.net** account.  
+1. A **[Wargaming.net](https://wargaming.net)** account.  
 2. Membership in a *World of Tanks* clan.  
-3. One of the following clan roles: **Commander**, **Executive Officer**, **Personnel Officer**, **Combat Officer**, **Intelligence Officer**, **Quartermaster**, **Recruitment Officer** , or **Junior Officer**.  
+3. One of the following clan roles: **Commander**, **Executive Officer**, **Personnel Officer**, **Combat Officer**, **Intelligence Officer**, **Quartermaster**, **Recruitment Officer**, or **Junior Officer**.  
 
-> **Note:** The service never asks for personal data – it relies solely on public data obtained through the official Wargaming.net API and OpenID authentication.
+> **Note:** The service never asks for personal data – it relies solely on public data obtained through the official **[Wargaming.net API](https://developers.wargaming.net/)** and **[OpenID](https://openid.net/)** authentication.
 
 ---
 
@@ -98,12 +99,12 @@ Hobby project.
 
 ---
 
-<!-- ────────────────────────────────────────────────────────────────────────── -->
-<!-- WERSJA POLSKA                                                            -->
-<!-- ────────────────────────────────────────────────────────────────────────── -->
+<!-- ─────────────────────────────────────────────────────────────────────────── -->
+<!-- WERSJA POLSKA                                                             -->
+<!-- ─────────────────────────────────────────────────────────────────────────── -->
 <a id="polski"></a>
 
-# WoT-CV – System rekrutacji graczy do klanów *World of Tanks*
+# [WoT-CV](https://wot-cv.com) – System rekrutacji graczy do klanów *[World of Tanks]*[1]
 
 ## Spis treści
 1. [Opis](#opis)
@@ -117,7 +118,7 @@ Hobby project.
 ---
 
 ## Opis
-**WoT-CV** to aplikacja webowa wspierająca proces rekrutacji graczy do klanów w grze *World of Tanks*.  
+**[WoT-CV](https://wot-cv.com)** to aplikacja webowa wspierająca proces rekrutacji graczy do klanów w grze *World of Tanks*.  
 Projekt powstał jako inicjatywa hobbystyczna autorów – **[Daniela Owczarczyka](https://www.linkedin.com/in/daniel-owczarczyk-8b89a6150)** i **[Marka Brajerskiego](https://www.linkedin.com/in/marek-brajerski)** – i ma na celu uproszczenie pracy rekruterów klanowych.
 
 ---
@@ -134,10 +135,10 @@ Projekt powstał jako inicjatywa hobbystyczna autorów – **[Daniela Owczarczyk
 ---
 
 ## Model biznesowy
-| Wariant    | Możliwości                     | Ograniczenia                                                                |
-|------------|--------------------------------|-----------------------------------------------------------------------------|
-| **Darmowy** | Podstawowa funkcjonalność     | • maks. 10 graczy do sprawdzenia dziennie<br>• zmiana filtrów 1× dziennie |
-| **Premium** | Pełny, nielimitowany dostęp   | Brak |
+| Wariant   | Możliwości                       | Ograniczenia                                                               |
+|-----------|----------------------------------|----------------------------------------------------------------------------|
+| **Darmowy** | Podstawowa funkcjonalność       | • maks. 10 graczy do sprawdzenia dziennie<br>• zmiana filtrów 1× dziennie |
+| **Premium** | Pełny, nielimitowany dostęp     | Brak |
 
 ---
 
@@ -176,11 +177,11 @@ Projekt powstał jako inicjatywa hobbystyczna autorów – **[Daniela Owczarczyk
 ---
 
 ## Wymagania dla użytkowników
-1. Posiadanie konta w domenie **Wargaming.net**.  
+1. Posiadanie konta w domenie **[Wargaming.net](https://wargaming.net)**.  
 2. Członkostwo w klanie gry *World of Tanks*.  
 3. Odpowiednia rola w klanie: **Dowódca**, **Oficer Wykonawczy**, **Oficer Kadrowy**, **Oficer Polowy**, **Oficer Wywiadu**, **Kwatermistrz**, **Oficer Werbunkowy** lub **Młodszy Oficer**.  
 
-> **Uwaga:** Serwis nie wymaga udostępniania danych osobowych – korzysta wyłącznie z publicznych danych uzyskanych poprzez oficjalne API Wargaming.net oraz mechanizm logowania OpenID.
+> **Uwaga:** Serwis nie wymaga udostępniania danych osobowych – korzysta wyłącznie z publicznych danych uzyskanych poprzez oficjalne **[Wargaming.net API](https://developers.wargaming.net/)** oraz mechanizm **[OpenID](https://openid.net/)**.
 
 ---
 
@@ -193,3 +194,7 @@ Projekt powstał jako inicjatywa hobbystyczna autorów – **[Daniela Owczarczyk
 ## Licencja
 Projekt o charakterze hobbystycznym.  
 Nazwy i znaki towarowe *World of Tanks* należą do Wargaming.net.
+
+---
+
+[1]: https://worldoftanks.eu/
