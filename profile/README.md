@@ -20,7 +20,7 @@
 
 ## Description
 **WoT-CV** is a web application that streamlines the recruitment process for *World of Tanks* clans.  
-Created as a hobby project by Daniel Owczarczyk and Marek Brajerski, it is designed to simplify a recruiter’s daily work.
+Created as a hobby project by **[Daniel Owczarczyk](https://www.linkedin.com/in/daniel-owczarczyk-8b89a6150)** and **[Marek Brajerski](https://www.linkedin.com/in/marek-brajerski)**, it is designed to simplify a recruiter’s daily work.
 
 ---
 
@@ -80,15 +80,15 @@ Created as a hobby project by Daniel Owczarczyk and Marek Brajerski, it is desig
 ## User Requirements
 1. A **Wargaming.net** account.  
 2. Membership in a *World of Tanks* clan.  
-3. One of the following clan roles: **Commander**, **Executive Officer**, **Personnel Officer**, **Field Commander**, or **Intelligence Officer**.  
+3. One of the following clan roles: **Commander**, **Executive Officer**, **Personnel Officer**, **Combat Officer**, **Intelligence Officer**, **Quartermaster**, **Recruitment Officer** , or **Junior Officer**.  
 
 > **Note:** The service never asks for personal data – it relies solely on public data obtained through the official Wargaming.net API and OpenID authentication.
 
 ---
 
 ## Authors
-- **Daniel Owczarczyk**  
-- **Marek Brajerski**
+- **[Daniel Owczarczyk](https://www.linkedin.com/in/daniel-owczarczyk-8b89a6150)**  
+- **[Marek Brajerski](https://www.linkedin.com/in/marek-brajerski)**
 
 ---
 
@@ -118,7 +118,7 @@ Hobby project.
 
 ## Opis
 **WoT-CV** to aplikacja webowa wspierająca proces rekrutacji graczy do klanów w grze *World of Tanks*.  
-Projekt powstał jako inicjatywa hobbystyczna autorów – Daniela Owczarczyka i Marka Brajerskiego – i ma na celu uproszczenie pracy rekruterów klanowych.
+Projekt powstał jako inicjatywa hobbystyczna autorów – **[Daniela Owczarczyka](https://www.linkedin.com/in/daniel-owczarczyk-8b89a6150)** i **[Marka Brajerskiego](https://www.linkedin.com/in/marek-brajerski)** – i ma na celu uproszczenie pracy rekruterów klanowych.
 
 ---
 
@@ -146,7 +146,7 @@ Projekt powstał jako inicjatywa hobbystyczna autorów – Daniela Owczarczyka i
 | Technologia | Wersja / opis                        |
 |-------------|--------------------------------------|
 | **Java**    | 21                                   |
-| **Spring Boot** | 3.4                             |
+| **Spring Boot** | 3.4                              |
 | **Architektura** | Heksagonalna (Ports & Adapters) |
 | **Wątki**   | Wirtualne (Project Loom)             |
 | **Testy jednostkowe** | Spock Framework           |
@@ -158,35 +158,35 @@ Projekt powstał jako inicjatywa hobbystyczna autorów – Daniela Owczarczyka i
 | **Boilerplate** | Lombok                          |
 
 ### Frontend
-| Technologia  | Wersja / opis                      |
-|--------------|------------------------------------|
-| **React**    | 19                                 |
-| **TypeScript** | 5.x.x                           |
-| **UI Kit**   | Material-UI v7                    |
-| **Stan aplikacji** | Redux                        |
-| **Bundler**  | Vite                               |
+| Technologia   | Wersja / opis                       |
+|---------------|-------------------------------------|
+| **React**     | 19                                  |
+| **TypeScript**| 5.x.x                               |
+| **UI Kit**    | Material-UI v7                      |
+| **Stan aplikacji** | Redux                         |
+| **Bundler**   | Vite                                |
 | **Testy jednostkowe** | Vitest & React Testing Library |
-| **Mocki HTTP** | MSW (Mock Service Worker)        |
-| **Routing**  | React Router                       |
-| **Formularze** | Formik                           |
-| **Internationalizacja** | i18next                 |
-| **Zarządzanie pakietami** | Yarn                  |
-| **Linting**  | ESLint                             |
+| **Mocki HTTP** | MSW (Mock Service Worker)         |
+| **Routing**   | React Router                       |
+| **Formularze**| Formik                             |
+| **Internationalizacja** | i18next                  |
+| **Zarządzanie pakietami** | Yarn                   |
+| **Linting**   | ESLint                             |
 
 ---
 
 ## Wymagania dla użytkowników
 1. Posiadanie konta w domenie **Wargaming.net**.  
 2. Członkostwo w klanie gry *World of Tanks*.  
-3. Odpowiednia rola w klanie: **Dowódca**, **Oficer Wykonawczy**, **Oficer Kadrowy**, **Oficer Polowy** lub **Oficer Wywiadu**.  
+3. Odpowiednia rola w klanie: **Dowódca**, **Oficer Wykonawczy**, **Oficer Kadrowy**, **Oficer Polowy**, **Oficer Wywiadu**, **Kwatermistrz**, **Oficer Werbunkowy** lub **Młodszy Oficer**.  
 
 > **Uwaga:** Serwis nie wymaga udostępniania danych osobowych – korzysta wyłącznie z publicznych danych uzyskanych poprzez oficjalne API Wargaming.net oraz mechanizm logowania OpenID.
 
 ---
 
 ## Autorzy
-- **Daniel Owczarczyk**  
-- **Marek Brajerski**
+- **[Daniel Owczarczyk](https://www.linkedin.com/in/daniel-owczarczyk-8b89a6150)**  
+- **[Marek Brajerski](https://www.linkedin.com/in/marek-brajerski)**
 
 ---
 
