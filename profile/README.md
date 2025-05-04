@@ -1,41 +1,195 @@
-# Projekt WoT-CV
+**[ENGLISH](#english) | [POLSKI](#polski)**
 
-Projekt wspiera rekrutację graczy do klanów w grze World of Tanks. Umożliwia wyszukiwanie odpowiednich graczy do klany za sprawą konfigurowalnych kryteriów wyszukiwania.
+<!-- ────────────────────────────────────────────────────────────────────────── -->
+<!-- ENGLISH VERSION                                                          -->
+<!-- ────────────────────────────────────────────────────────────────────────── -->
+<a id="english"></a>
 
-## Funkcje
+# WoT-CV – Player Recruitment System for *World of Tanks* Clans
 
-- **Rejestracja** i logowanie z wykorzystaniem OpenID.  
-- **Wyszukiwarka** kandydatów z filtrami i narzędziami analizy.  
-- **Responsywny design** oparty na React i Material UI.
+## Table of Contents
+1. [Description](#description)
+2. [Key Features](#key-features)
+3. [Business Model](#business-model)
+4. [Technologies](#technologies)
+5. [User Requirements](#user-requirements)
+6. [Authors](#authors)
+7. [License](#license)
 
-## Użyte Technologie
+---
 
-**Backend**
+## Description
+**WoT-CV** is a web application that streamlines the recruitment process for *World of Tanks* clans.  
+Created as a hobby project by Daniel Owczarczyk and Marek Brajerski, it is designed to simplify a recruiter’s daily work.
 
-- Java 21
-- Spring Boot 3.4
-- Architektura Heksagonalna
-- Wątki wirtualne
-- Spock Framework
-- WireMock
-- MongoDB
-- Mongock
-- Maven
-- Lombok
-- Logbook
+---
 
-**Frontend**
+## Key Features
+- **Potential-recruit search** – automatically finds players matching clan requirements.  
+- **Advanced search filters** – configurable criteria based on statistics, activity, or preferred language.  
+- **Admin panel** – manage clan-member permissions.  
+- **Check list** – review candidates who meet the chosen criteria.  
+- **Recruitment statistics** – detailed insights into recruitment effectiveness.  
+- **Recruitment history** – log of all reviewed players.  
+- **Auto-invite plugin** – removes the need to send invitations manually.
 
-- React 19
-- TypeScript 5.X.X
-- Material-UI v7
-- Redux
-- Vite
-- Vitest
-- React Testing Library
-- MSW
-- React router
-- Formik
-- i18next
-- Yarn
-- ESLint
+---
+
+## Business Model
+| Tier        | Capabilities                               | Limitations                                                                |
+|-------------|--------------------------------------------|----------------------------------------------------------------------------|
+| **Free**    | Core functionality                         | • Up to 10 players checked per day<br>• Filters can be changed once a day |
+| **Premium** | Unlimited access to every feature          | None |
+
+---
+
+## Technologies
+### Backend
+| Technology       | Version / Notes                         |
+|------------------|-----------------------------------------|
+| **Java**         | 21                                      |
+| **Spring Boot**  | 3.4                                     |
+| **Architecture** | Hexagonal (Ports & Adapters)            |
+| **Threads**      | Virtual threads (Project Loom)          |
+| **Unit tests**   | Spock Framework                         |
+| **Service mocks**| WireMock                                |
+| **Database**     | MongoDB                                 |
+| **Migrations**   | Mongock                                 |
+| **Build tool**   | Maven                                   |
+| **Log masking**  | Logbook                                 |
+| **Boilerplate**  | Lombok                                  |
+
+### Frontend
+| Technology        | Version / Notes                     |
+|-------------------|-------------------------------------|
+| **React**         | 19                                  |
+| **TypeScript**    | 5.x.x                               |
+| **UI Kit**        | Material-UI v7                      |
+| **State mgmt**    | Redux                               |
+| **Bundler**       | Vite                                |
+| **Unit tests**    | Vitest & React Testing Library      |
+| **HTTP mocks**    | MSW (Mock Service Worker)           |
+| **Routing**       | React Router                        |
+| **Forms**         | Formik                              |
+| **i18n**          | i18next                             |
+| **Package mgr**   | Yarn                                |
+| **Linting**       | ESLint                              |
+
+---
+
+## User Requirements
+1. A **Wargaming.net** account.  
+2. Membership in a *World of Tanks* clan.  
+3. One of the following clan roles: **Commander**, **Executive Officer**, **Personnel Officer**, **Field Commander**, or **Intelligence Officer**.  
+
+> **Note:** The service never asks for personal data – it relies solely on public data obtained through the official Wargaming.net API and OpenID authentication.
+
+---
+
+## Authors
+- **Daniel Owczarczyk**  
+- **Marek Brajerski**
+
+---
+
+## License
+Hobby project.  
+*World of Tanks* is a trademark of Wargaming.net.
+
+---
+
+<!-- ────────────────────────────────────────────────────────────────────────── -->
+<!-- WERSJA POLSKA                                                            -->
+<!-- ────────────────────────────────────────────────────────────────────────── -->
+<a id="polski"></a>
+
+# WoT-CV – System rekrutacji graczy do klanów *World of Tanks*
+
+## Spis treści
+1. [Opis](#opis)
+2. [Główne funkcjonalności](#główne-funkcjonalności)
+3. [Model biznesowy](#model-biznesowy)
+4. [Technologie](#technologie)
+5. [Wymagania dla użytkowników](#wymagania-dla-użytkowników)
+6. [Autorzy](#autorzy)
+7. [Licencja](#licencja)
+
+---
+
+## Opis
+**WoT-CV** to aplikacja webowa wspierająca proces rekrutacji graczy do klanów w grze *World of Tanks*.  
+Projekt powstał jako inicjatywa hobbystyczna autorów – Daniela Owczarczyka i Marka Brajerskiego – i ma na celu uproszczenie pracy rekruterów klanowych.
+
+---
+
+## Główne funkcjonalności
+- **Wyszukiwanie potencjalnych rekrutów** – automatyczne odnajdywanie graczy spełniających wymagania klanu.  
+- **Zaawansowane filtry wyszukiwania** – konfigurowalne kryteria dotyczące statystyk, aktywności czy języka komunikacji.  
+- **Panel administracyjny** – zarządzanie uprawnieniami członków klanu.  
+- **Lista graczy do sprawdzenia** – zestawienie kandydatów spełniających określone kryteria.  
+- **Statystyki rekrutacji** – szczegółowe dane dotyczące skuteczności procesu.  
+- **Historia rekrutacji** – zapis historii przeanalizowanych graczy.  
+- **Wtyczka do automatycznego zapraszania** – eliminuje konieczność ręcznego wysyłania zaproszeń.
+
+---
+
+## Model biznesowy
+| Wariant    | Możliwości                     | Ograniczenia                                                                |
+|------------|--------------------------------|-----------------------------------------------------------------------------|
+| **Darmowy** | Podstawowa funkcjonalność     | • maks. 10 graczy do sprawdzenia dziennie<br>• zmiana filtrów 1× dziennie |
+| **Premium** | Pełny, nielimitowany dostęp   | Brak |
+
+---
+
+## Technologie
+### Backend
+| Technologia | Wersja / opis                        |
+|-------------|--------------------------------------|
+| **Java**    | 21                                   |
+| **Spring Boot** | 3.4                             |
+| **Architektura** | Heksagonalna (Ports & Adapters) |
+| **Wątki**   | Wirtualne (Project Loom)             |
+| **Testy jednostkowe** | Spock Framework           |
+| **Mockowanie zewn. serwisów** | WireMock          |
+| **Baza danych** | MongoDB                          |
+| **Migracje** | Mongock                            |
+| **Budowanie** | Maven                             |
+| **Anonimizacja logów** | Logbook                  |
+| **Boilerplate** | Lombok                          |
+
+### Frontend
+| Technologia  | Wersja / opis                      |
+|--------------|------------------------------------|
+| **React**    | 19                                 |
+| **TypeScript** | 5.x.x                           |
+| **UI Kit**   | Material-UI v7                    |
+| **Stan aplikacji** | Redux                        |
+| **Bundler**  | Vite                               |
+| **Testy jednostkowe** | Vitest & React Testing Library |
+| **Mocki HTTP** | MSW (Mock Service Worker)        |
+| **Routing**  | React Router                       |
+| **Formularze** | Formik                           |
+| **Internationalizacja** | i18next                 |
+| **Zarządzanie pakietami** | Yarn                  |
+| **Linting**  | ESLint                             |
+
+---
+
+## Wymagania dla użytkowników
+1. Posiadanie konta w domenie **Wargaming.net**.  
+2. Członkostwo w klanie gry *World of Tanks*.  
+3. Odpowiednia rola w klanie: **Dowódca**, **Oficer Wykonawczy**, **Oficer Kadrowy**, **Oficer Polowy** lub **Oficer Wywiadu**.  
+
+> **Uwaga:** Serwis nie wymaga udostępniania danych osobowych – korzysta wyłącznie z publicznych danych uzyskanych poprzez oficjalne API Wargaming.net oraz mechanizm logowania OpenID.
+
+---
+
+## Autorzy
+- **Daniel Owczarczyk**  
+- **Marek Brajerski**
+
+---
+
+## Licencja
+Projekt o charakterze hobbystycznym.  
+Nazwy i znaki towarowe *World of Tanks* należą do Wargaming.net.
