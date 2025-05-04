@@ -21,7 +21,7 @@
 <!-- ─────────────────────────────────────────────────────────────────────────── -->
 <a id="english"></a>
 
-# [WoT-CV](https://wot-cv.com) – Player Recruitment System for *[World of Tanks](https://worldoftanks.eu/)* Clans
+# [WoT-CV](https://wot-cv.com) – Player Recruitment System for [World of Tanks](https://worldoftanks.eu/) Clans
 
 ## Table of Contents
 
@@ -42,8 +42,8 @@
 <div align="center">
 
 ## Description
-**[WoT-CV](https://wot-cv.com)** is a web application that streamlines the recruitment process for *[World of Tanks](https://worldoftanks.eu/)* clans.  
-Created as a hobby project by **[Daniel Owczarczyk](https://www.linkedin.com/in/daniel-owczarczyk-8b89a6150)** and  **[Marek Brajerski](https://www.linkedin.com/in/marek-brajerski)**, it is designed to simplify a recruiter’s daily work.
+[WoT-CV](https://wot-cv.com) is a web application that streamlines the recruitment process for [World of Tanks](https://worldoftanks.eu/) clans.  
+Created as a hobby project by [Daniel Owczarczyk](https://www.linkedin.com/in/daniel-owczarczyk-8b89a6150) and  [Marek Brajerski](https://www.linkedin.com/in/marek-brajerski), it is designed to simplify a recruiter’s daily work.
 
 ---
 
@@ -112,11 +112,11 @@ Created as a hobby project by **[Daniel Owczarczyk](https://www.linkedin.com/in/
 </div>
 <!-- END CENTER -->
 
-1. A **[Wargaming.net](https://wargaming.net)** account.  
-2. Membership in a *[World of Tanks](https://worldoftanks.eu/)* clan.  
+1. A [Wargaming.net](https://wargaming.net) account.  
+2. Membership in a [World of Tanks](https://worldoftanks.eu/) clan.  
 3. One of the following clan roles: **Commander**, **Executive Officer**, **Personnel Officer**, **Combat Officer**, **Intelligence Officer**, **Quartermaster**, **Recruitment Officer**, or **Junior Officer**.  
 
-> **Note:** The service never asks for personal data – it relies solely on public data obtained through the official **[Wargaming.net API](https://developers.wargaming.net/)** and **[OpenID](https://openid.net/)** authentication.
+> **Note:** The service never asks for personal data – it relies solely on public data obtained through the official [Wargaming.net API](https://developers.wargaming.net/) and [OpenID](https://openid.net/) authentication.
 
 ---
 
@@ -124,13 +124,13 @@ Created as a hobby project by **[Daniel Owczarczyk](https://www.linkedin.com/in/
 <div align="center">
 
 ## Authors
-**[Daniel Owczarczyk](https://www.linkedin.com/in/daniel-owczarczyk-8b89a6150)** && **[Marek Brajerski](https://www.linkedin.com/in/marek-brajerski)**
+[Daniel Owczarczyk](https://www.linkedin.com/in/daniel-owczarczyk-8b89a6150) & [Marek Brajerski](https://www.linkedin.com/in/marek-brajerski)
 
 ---
 
 ## License
 Hobby project.  
-*[World of Tanks](https://worldoftanks.eu/)* is a trademark of [Wargaming.net](https://wargaming.net).
+[World of Tanks](https://worldoftanks.eu/) is a trademark of [Wargaming.net](https://wargaming.net).
 
 ---
 
@@ -144,7 +144,7 @@ Hobby project.
 <!-- ─────────────────────────────────────────────────────────────────────────── -->
 <a id="polski"></a>
 
-# [WoT-CV](https://wot-cv.com) – System rekrutacji graczy do klanów *[World of Tanks](https://worldoftanks.eu/)*
+# [WoT-CV](https://wot-cv.com) – System rekrutacji graczy do klanów [World of Tanks](https://worldoftanks.eu/)
 
 ## Spis treści
 
@@ -165,8 +165,8 @@ Hobby project.
 <div align="center">
 
 ## Opis
-**[WoT-CV](https://wot-cv.com)** to aplikacja webowa wspierająca proces rekrutacji graczy do klanów w grze *[World of Tanks](https://worldoftanks.eu/)*.
-Projekt powstał jako inicjatywa hobbystyczna autorów – **[Daniela Owczarczyka](https://www.linkedin.com/in/daniel-owczarczyk-8b89a6150)** i **[Marka Brajerskiego](https://www.linkedin.com/in/marek-brajerski)** – i ma na celu uproszczenie pracy rekruterów klanowych.
+[WoT-CV](https://wot-cv.com) to aplikacja webowa wspierająca proces rekrutacji graczy do klanów w grze [World of Tanks](https://worldoftanks.eu/).
+Projekt powstał jako inicjatywa hobbystyczna autorów – [Daniela Owczarczyka](https://www.linkedin.com/in/daniel-owczarczyk-8b89a6150) i [Marka Brajerskiego](https://www.linkedin.com/in/marek-brajerski) – i ma na celu uproszczenie pracy rekruterów klanowych.
 
 ---
 
@@ -235,11 +235,11 @@ Projekt powstał jako inicjatywa hobbystyczna autorów – **[Daniela Owczarczyk
 </div>
 <!-- END CENTER -->
 
-1. Posiadanie konta w domenie **[Wargaming.net](https://wargaming.net)**.  
-2. Członkostwo w klanie gry *[World of Tanks](https://worldoftanks.eu/)*.
+1. Posiadanie konta w domenie [Wargaming.net](https://wargaming.net).  
+2. Członkostwo w klanie gry [World of Tanks](https://worldoftanks.eu/).
 3. Odpowiednia rola w klanie: **Dowódca**, **Oficer Wykonawczy**, **Oficer Kadrowy**, **Oficer Polowy**, **Oficer Wywiadu**, **Kwatermistrz**, **Oficer Werbunkowy** lub **Młodszy Oficer**.  
 
-> **Uwaga:** Serwis nie wymaga udostępniania danych osobowych – korzysta wyłącznie z publicznych danych uzyskanych poprzez oficjalne **[Wargaming.net API](https://developers.wargaming.net/)** oraz mechanizm **[OpenID](https://openid.net/)**.
+> **Uwaga:** Serwis nie wymaga udostępniania danych osobowych – korzysta wyłącznie z publicznych danych uzyskanych poprzez oficjalne [Wargaming.net API](https://developers.wargaming.net/) oraz mechanizm [OpenID](https://openid.net/).
 
 ---
 
@@ -247,13 +247,13 @@ Projekt powstał jako inicjatywa hobbystyczna autorów – **[Daniela Owczarczyk
 <div align="center">
 
 ## Autorzy
-**[Daniel Owczarczyk](https://www.linkedin.com/in/daniel-owczarczyk-8b89a6150)** && **[Marek Brajerski](https://www.linkedin.com/in/marek-brajerski)**
+[Daniel Owczarczyk](https://www.linkedin.com/in/daniel-owczarczyk-8b89a6150) & [Marek Brajerski](https://www.linkedin.com/in/marek-brajerski)
 
 ---
 
 ## Licencja
 Projekt o charakterze hobbystycznym.  
-Nazwy i znaki towarowe *[World of Tanks](https://worldoftanks.eu/)* należą do [Wargaming.net](https://wargaming.net).
+Nazwy i znaki towarowe [World of Tanks](https://worldoftanks.eu/) należą do [Wargaming.net](https://wargaming.net).
 
 ---
 
