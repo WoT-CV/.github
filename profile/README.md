@@ -12,6 +12,11 @@
        alt="WoT-CV Logo"
        width="200" />
 </p> 
+<p>
+  <img src="https://github.com/user-attachments/assets/b04a9db9-308e-46ee-be83-5da2387b7d59"
+       alt="WoT-CV Logo"
+       width="200" />
+</p> 
 </br>
 
 **[ENGLISH](#english) | [POLSKI](#polski)**
