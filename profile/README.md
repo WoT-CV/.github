@@ -122,8 +122,7 @@ work.
 
 1. A [Wargaming.net](https://wargaming.net) account.
 2. Membership in a [World of Tanks](https://worldoftanks.eu/) clan.
-3. One of the following clan roles: **Commander**, **Executive Officer**, **Personnel Officer**, **Combat Officer**, *
-   *Intelligence Officer**, **Quartermaster**, **Recruitment Officer**, or **Junior Officer**.
+3. One of the following clan roles: **Commander**, **Executive Officer**, **Personnel Officer**, **Combat Officer**, **Intelligence Officer**, **Quartermaster**, **Recruitment Officer**, or **Junior Officer**.
 
 > **Note:** The service never asks for personal data – it relies solely on public data obtained through the
 > official [Wargaming.net API](https://developers.wargaming.net/) and [OpenID](https://openid.net/) authentication.
