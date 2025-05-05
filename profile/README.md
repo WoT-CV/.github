@@ -4,12 +4,12 @@
 <!-- LOGOS --> 
 <p>
   <img src="https://github.com/user-attachments/assets/7ec675d4-d52c-4bb5-b5f7-049e33376994"
-       alt="WoT-CV Icon"
+       alt="WOT-CV Icon"
        width="48" />
 </p>
 <p>
   <img src="https://github.com/user-attachments/assets/b04a9db9-308e-46ee-be83-5da2387b7d59"
-       alt="WoT-CV Logo"
+       alt="WOT-CV Logo"
        width="200" />
 </p> 
 </br>
@@ -21,7 +21,7 @@
 <!-- ─────────────────────────────────────────────────────────────────────────── -->
 <a id="english"></a>
 
-# [WoT-CV](https://wot-cv.com) – Player Recruitment System for [World of Tanks](https://worldoftanks.eu/) Clans
+# [WOT-CV](https://wot-cv.com) – Player Recruitment System for [World of Tanks](https://worldoftanks.eu/) Clans
 
 ## Table of Contents
 
@@ -43,7 +43,7 @@
 
 ## Description
 
-[WoT-CV](https://wot-cv.com) is a web application that streamlines the recruitment process
+[WOT-CV](https://wot-cv.com) is a web application that streamlines the recruitment process
 for [World of Tanks](https://worldoftanks.eu/) clans.  
 Created as a hobby project by [Daniel Owczarczyk](https://www.linkedin.com/in/daniel-owczarczyk-8b89a6150)
 and  [Marek Brajerski](https://www.linkedin.com/in/marek-brajerski), it is designed to simplify a recruiter’s daily
@@ -155,7 +155,7 @@ Hobby project.
 <!-- ─────────────────────────────────────────────────────────────────────────── -->
 <a id="polski"></a>
 
-# [WoT-CV](https://wot-cv.com) – System rekrutacji graczy do klanów [World of Tanks](https://worldoftanks.eu/)
+# [WOT-CV](https://wot-cv.com) – System rekrutacji graczy do klanów [World of Tanks](https://worldoftanks.eu/)
 
 ## Spis treści
 
@@ -177,7 +177,7 @@ Hobby project.
 
 ## Opis
 
-[WoT-CV](https://wot-cv.com) to aplikacja webowa wspierająca proces rekrutacji graczy do klanów w
+[WOT-CV](https://wot-cv.com) to aplikacja webowa wspierająca proces rekrutacji graczy do klanów w
 grze [World of Tanks](https://worldoftanks.eu/).
 Projekt powstał jako inicjatywa hobbystyczna
 autorów – [Daniela Owczarczyka](https://www.linkedin.com/in/daniel-owczarczyk-8b89a6150)
