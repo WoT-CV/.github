@@ -66,18 +66,6 @@ work.
 
 ---
 
-<!-- BEGIN CENTER -->
-<div align="center">
-
-## Business Model
-
-| Tier        | Capabilities                      | Limitations                                                               |
-|-------------|-----------------------------------|---------------------------------------------------------------------------|
-| **Free**    | Core functionality                | • Up to 10 players checked per day<br>• Filters can be changed once a day |
-| **Premium** | Unlimited access to every feature | None                                                                      |
-
----
-
 ## Technologies
 
 ### Backend
@@ -198,18 +186,6 @@ klanowych.
 - **Statystyki rekrutacji** – szczegółowe dane dotyczące skuteczności procesu.
 - **Historia rekrutacji** – zapis historii przeanalizowanych graczy.
 - **Wtyczka do automatycznego zapraszania** – eliminuje konieczność ręcznego wysyłania zaproszeń.
-
----
-
-<!-- BEGIN CENTER -->
-<div align="center">
-
-## Model biznesowy
-
-| Wariant     | Możliwości                  | Ograniczenia                                                              |
-|-------------|-----------------------------|---------------------------------------------------------------------------|
-| **Darmowy** | Podstawowa funkcjonalność   | • maks. 10 graczy do sprawdzenia dziennie<br>• zmiana filtrów 1× dziennie |
-| **Premium** | Pełny, nielimitowany dostęp | Brak                                                                      |
 
 ---
 
