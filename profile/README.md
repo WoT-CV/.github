@@ -1,24 +1,15 @@
 <div align="center">
 
 <p>
-  <img
-    src="https://github.com/user-attachments/assets/7ec675d4-d52c-4bb5-b5f7-049e33376994"
-    alt="WOT-CV icon"
-    width="48"
-  />
+  <img src="https://github.com/user-attachments/assets/7ec675d4-d52c-4bb5-b5f7-049e33376994" alt="WOT-CV icon" width="48" />
 </p>
-
 <p>
-  <img
-    src="https://github.com/user-attachments/assets/b04a9db9-308e-46ee-be83-5da2387b7d59"
-    alt="WOT-CV logo"
-    width="200"
-  />
+  <img src="https://github.com/user-attachments/assets/b04a9db9-308e-46ee-be83-5da2387b7d59" alt="WOT-CV logo" width="200" />
 </p>
-
-<br />
 
 **[ENGLISH](#english)&nbsp;&nbsp;|&nbsp;&nbsp;[POLSKI](#polski)**
+
+[WOT-CV](https://wot-cv.com) · [Product news](https://wot-cv.com/news) · [Chrome extension](https://chromewebstore.google.com/detail/wot-cv-bot-rekrutacyjny/egpehblnoofhlccabcnlljefmjccejik) · [Firefox extension](https://addons.mozilla.org/en-US/firefox/addon/wot-cv-recruitbot)
 
 </div>
 
@@ -26,700 +17,672 @@
 
 <a id="english"></a>
 
-<div align="center">
+# WOT-CV — World of Tanks clan recruitment, player stats and clan tools
 
-# [WOT-CV](https://wot-cv.com)
+[WOT-CV](https://wot-cv.com) is a **World of Tanks clan recruitment tool** for commanders, officers and recruiters on the EU server. Find suitable players, compare their statistics and vehicles, coordinate invitations and follow your clan's recruitment results in one place.
 
-### Recruitment platform for [World of Tanks](https://worldoftanks.eu/) clans
+Build recruitment around the players your clan needs. WOT-CV combines **WN8 and WNX filters**, activity and vehicle requirements, recruitment history, a browser extension and tools for managing clan reserves. It helps your team spend less time switching between profiles and more time reviewing relevant candidates.
 
-</div>
+For developers, the project also brings together Java and Spring Boot services, a React and TypeScript application, and browser-extension development. Explore our [technology and engineering approach](#en-technologies).
 
-## Table of Contents
+## Contents
 
-1. [Description](#en-description)
-2. [Start Here](#en-start)
-3. [Ecosystem](#en-ecosystem)
-4. [Key Features](#en-key-features)
-5. [Account Types](#en-account-types)
-6. [Authentication and Clan Registration](#en-authentication)
-7. [Technologies](#en-technologies)
-8. [User Requirements](#en-user-requirements)
-9. [Security and Privacy](#en-security)
-10. [Repositories and Documentation](#en-repositories)
-11. [Authors](#en-authors)
-12. [License and Trademarks](#en-license)
-
----
+1. [Who WOT-CV is for](#en-description)
+2. [What your clan can do with WOT-CV](#en-key-features)
+3. [Find players for your World of Tanks clan](#en-recruitment)
+4. [Recruitment history and team statistics](#en-history)
+5. [Player and clan blocklist](#en-blocklist)
+6. [Recruitment extension and invitation messages](#en-extension)
+7. [World of Tanks clan reserves](#en-clan-reserves)
+8. [Free and Premium access](#en-account-types)
+9. [How to get started](#en-start)
+10. [Demo, languages and everyday use](#en-user-experience)
+11. [Frequently asked questions](#en-faq)
+12. [Account access and privacy](#en-security)
+13. [News, community and support](#en-support)
+14. [Technology and engineering](#en-technologies)
+15. [About the project](#en-authors)
 
 <a id="en-description"></a>
 
-## Description
+## Who WOT-CV is for
 
-[WOT-CV](https://wot-cv.com) is an ecosystem of applications that supports the recruitment of players to [World of Tanks](https://worldoftanks.eu/) clans.
+Recruiting for a World of Tanks clan involves more than finding a high rating. Your team also needs to understand a player's recent activity, available tanks, clan history and preferred language. WOT-CV brings those considerations into a shared recruitment process.
 
-The platform helps clan staff discover potential recruits, apply configurable recruitment criteria, review candidates, manage access for clan members, analyse recruitment results and automate selected activities through a browser extension.
+- **Commanders and executive officers** can define recruitment requirements, organize access and follow the team's results.
+- **Recruitment officers and recruiters** can review candidates, prepare invitations and keep track of earlier decisions.
+- **Clan staff responsible for reserves** can check availability, see online-player counts and activate reserves from the clan panel.
 
-WOT-CV was created as a hobby project by [Daniel Owczarczyk](https://www.linkedin.com/in/daniel-owczarczyk-8b89a6150) and [Marek Brajerski](https://www.linkedin.com/in/marek-brajerski).
-
-<a id="en-start"></a>
-
-## Start Here
-
-1. Open [wot-cv.com](https://wot-cv.com).
-2. Select login with Wargaming. Authentication takes place on Wargaming's website and returns through the WOT-CV backend.
-3. If your clan is already registered, WOT-CV opens the application with the permissions assigned to your account.
-4. If your clan is not registered and you hold a supported officer role, accept the registration consent, review the detected clan data and complete the initial configuration.
-5. Configure recruitment filters and access for clan members.
-6. Optionally install the [WOT-CV browser extension](https://github.com/WoT-CV/wot-cv-extension) to automate invitations on the Wargaming clan portal.
-
-The browser extension is optional. The web application, backend and data refresher provide the core recruitment workflow.
-
-<a id="en-ecosystem"></a>
-
-## Ecosystem
-
-WOT-CV consists of four cooperating applications:
-
-- **Web application** — the user interface used by recruiters and clan staff.
-- **Backend** — public APIs, authentication, authorization and business logic.
-- **Data refresher** — scheduled data collection, transformation, migrations and maintenance.
-- **Browser extension** — integration with the Wargaming clan portal and automated invitations.
-
-```mermaid
-flowchart LR
-    USER[Recruiter or clan officer]
-    FE[WOT-CV web application]
-    BE[WOT-CV backend]
-    REFRESHER[WOT-CV data refresher]
-    EXT[WOT-CV browser extension]
-    DB[(MongoDB)]
-    WG_OPENID[Wargaming OpenID]
-    WG_API[Wargaming API]
-    WG_PORTAL[Wargaming clan portal]
-
-    USER --> FE
-    USER --> EXT
-    FE --> BE
-    EXT --> BE
-    EXT --> WG_PORTAL
-    BE --> DB
-    BE --> REFRESHER
-    REFRESHER --> DB
-    REFRESHER --> WG_API
-    BE --> WG_OPENID
-```
-
-The integration direction is intentional: the backend may invoke selected data-refresher operations, while the data refresher does not call the backend through REST.
+Whether you are expanding an active roster or looking for players with specific vehicles, you can adapt the filters to your clan's expectations. WOT-CV focuses on **World of Tanks EU**.
 
 <a id="en-key-features"></a>
 
-## Key Features
+## What your clan can do with WOT-CV
 
-- **Potential recruit discovery** — finds players who may match clan requirements.
-- **Advanced recruitment filters** — configurable criteria based on player statistics, activity, vehicles and communication language.
-- **Players-to-check queue** — a structured workflow for reviewing candidates.
-- **Recruitment history** — a record of previously analysed players.
-- **Recruitment statistics** — insights into the effectiveness of clan recruitment.
-- **Clan administration** — management of access and permissions for clan members.
-- **Player and clan blocklist** — prevents unsuitable candidates from returning to recruitment results.
-- **Browser extension** — supports automated invitations from the Wargaming clan portal.
-- **Internationalisation** — English, Polish, German, Czech and Russian user interfaces.
+| Your goal                         | How WOT-CV helps                                                                               |
+| --------------------------------- | ---------------------------------------------------------------------------------------------- |
+| Find suitable recruits            | Match candidates to the clan's requirements for skill, activity, language and vehicles.        |
+| Review player statistics          | Compare overall and recent results, WN8/WNX, battle experience and available tanks.            |
+| Adjust recruitment requirements   | Estimate the candidate pool and see which filters restrict it most.                            |
+| Coordinate several recruiters     | Share recruitment history, decisions and a consistent invitation message.                      |
+| Follow recruitment results        | Review invitations, players who joined and results by period or recruiter.                     |
+| Avoid unsuitable candidates       | Maintain a player and clan blocklist with reasons and visibility settings.                     |
+| Send invitations more efficiently | Use the paired browser extension to assist with invitations through the Wargaming clan portal. |
+| Manage clan reserves              | View inventory and active reserves, check online players and activate a selected reserve.      |
+| Organize clan access              | Assign access and responsibilities to the people working with your clan.                       |
+| Explore the service               | Try the demo and choose from eleven interface languages.                                       |
+
+Some features require Premium access or the appropriate clan permissions. The application shows the options available to your clan.
+
+<a id="en-recruitment"></a>
+
+## Find players for your World of Tanks clan
+
+### Recruitment filters that reflect your requirements
+
+WOT-CV helps you search for candidates using several aspects of a player's profile. You can combine skill and activity requirements with the tanks and languages that matter to your clan.
+
+| Area                    | What you can consider                                                                    |
+| ----------------------- | ---------------------------------------------------------------------------------------- |
+| Player performance      | WN8 or WNX, overall and recent results, and personal rating.                             |
+| Activity and experience | Recent activity, random battles and experience in clan battles.                          |
+| Clan history            | Time without a clan, earlier membership and recruitment waiting periods.                 |
+| Communication           | Preferred languages and multilingual players.                                            |
+| Vehicles                | Selected meta tanks, required vehicles and groups of tanks at tiers VI, VIII and X.      |
+| Vehicle performance     | Battle experience, damage, assistance and skill results for the vehicles you care about. |
+
+For example, a clan preparing for organized battles can look for active players with the relevant tanks. A team looking for regular participation can place more emphasis on recent activity and language. The filters let you express those differences instead of relying on one rating alone.
+
+Candidate estimates and filter-impact hints help you understand when the requirements are too narrow. Advanced vehicle filters are available with Premium access.
+
+### From candidate review to an invitation
+
+The **Players to Check** view brings together the information needed to assess a potential recruit:
+
+- overall and recent player statistics;
+- available vehicles and their results;
+- clan history and relevant recruitment information;
+- links to the player's game profile;
+- actions to invite, reject, temporarily skip or block a candidate.
+
+Recruiters can review each player and record a decision. With the browser extension, eligible users can also process invitations through the Wargaming portal and see their outcomes in WOT-CV.
+
+Player data and clan membership change over time. Use the information shown in the application to support your recruitment decisions, and distinguish an invitation from a player actually joining the clan.
+
+<a id="en-history"></a>
+
+## Recruitment history and team statistics
+
+A shared recruitment history helps your team understand who has already been reviewed and what happened next. Recruiters can look back at previous decisions, find temporarily skipped candidates and restore eligible players for another review.
+
+Recruitment statistics help commanders and officers follow the team's work:
+
+- review overall, yearly, monthly and weekly results;
+- compare activity and results by recruiter;
+- follow invitations and players who joined the clan;
+- assess recruitment over time and adjust the team's priorities.
+
+Keeping that history in one place makes handovers between recruiters easier and gives the clan a common record of its recruitment effort.
+
+<a id="en-blocklist"></a>
+
+## Player and clan blocklist
+
+Your clan can keep a list of players and clans that should be excluded from recruitment or flagged for attention. Reasons attached to entries help other recruiters understand earlier decisions.
+
+Two visibility options support different workflows:
+
+- **Hide blocked candidates** when the team should focus on the remaining players.
+- **Show a warning** when recruiters need to see the candidate together with the block reason.
+
+Clan-related rules can also account for a player's membership history and the configured period after leaving a blocked clan. Authorized users can maintain the list and update its reasons and settings.
+
+The automatic invitation workflow excludes blocked candidates, including those displayed with a warning.
+
+<a id="en-extension"></a>
+
+## Recruitment extension and invitation messages
+
+### A browser companion for clan recruiters
+
+The **WOT-CV recruitment extension** helps recruiters send invitations through the Wargaming EU clan portal. It is available through the [Chrome Web Store](https://chromewebstore.google.com/detail/wot-cv-bot-rekrutacyjny/egpehblnoofhlccabcnlljefmjccejik) and [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/wot-cv-recruitbot). Supported Chromium browsers include Chrome, Edge and Opera.
+
+Pair the extension with your WOT-CV account using the instructions on the **Extension** page. The popup shows the connection status and helps you identify when the account needs attention.
+
+Invitation assistance requires Premium access, a paired extension and the appropriate Wargaming account signed in through the browser. Results show whether an invitation succeeded or whether a portal restriction prevented it. The process operates within Wargaming's invitation limits.
+
+### A shared recruitment message
+
+Your clan can maintain one invitation message for its recruitment team. Authorized users can edit it in WOT-CV or in the extension popup.
+
+- Write a message of up to **500 characters**, or leave it empty for an invitation without additional text.
+- Keep the clan's introduction and expectations consistent across recruiters.
+- See when another recruiter has changed the saved message.
+- Resolve conflicting edits while keeping control of your own draft.
+- Close and reopen the popup during the same browser session without losing a saved draft.
+
+A useful recruitment message introduces the clan, explains what it offers and makes the next step clear for the player. The editor helps the team reuse and maintain that message as recruitment priorities change.
+
+<a id="en-clan-reserves"></a>
+
+## World of Tanks clan reserves
+
+The clan reserve panel gives authorized officers a convenient place to check and **manually activate clan reserves**.
+
+You can:
+
+- view available reserves, their levels, quantities, duration and bonuses;
+- check which reserves are active;
+- see how many clan members are online, including reservists;
+- choose an available reserve level and confirm activation;
+- review the activation history and reported outcome.
+
+Supported reserve types include **Battle Payments**, **Military Maneuvers**, **Tactical Training** and **Additional Briefing**.
+
+Reserve access requires Premium, the relevant clan permissions and a separate authorization through Wargaming. The application guides the responsible officer through that connection. The recruitment extension is not required to use the reserve panel.
 
 <a id="en-account-types"></a>
 
-## Account Types
+## Free and Premium access
 
-WOT-CV uses three account types:
+You can start with the core recruitment features and choose Premium when your clan needs more extensive tools.
 
-| Account type | Description |
-| --- | --- |
-| **FREE** | Provides access to the core recruitment workflow with product limits. |
-| **PREMIUM** | Provides premium capabilities and expanded or unlimited limits. |
-| **TESTER** | Behaves like a premium account and may additionally receive features enabled only for testers. |
+| Area                                     | Free                     | Premium                                                             |
+| ---------------------------------------- | ------------------------ | ------------------------------------------------------------------- |
+| Candidate review                         | A limited candidate pool | An expanded recruitment workflow                                    |
+| Basic recruitment filters                | Available                | Available                                                           |
+| Advanced vehicle and tank-group filters  | Not included             | Available                                                           |
+| Automated invitations with the extension | Not included             | Available after pairing                                             |
+| Shared invitation-message editor         | Not included             | Available to authorized users                                       |
+| Clan reserve tools                       | Demo preview             | Available with the required permissions and Wargaming authorization |
 
-`PREMIUM` and `TESTER` are treated equally when a feature requires premium access. The separate `TESTER` type allows selected experimental features to be released to testers before a wider rollout.
-
-<a id="en-authentication"></a>
-
-## Authentication and Clan Registration
-
-WOT-CV uses **Wargaming OpenID 2.0**. Wargaming authenticates the player; WOT-CV never receives the player's Wargaming password.
-
-The frontend starts authentication by performing a full browser navigation to:
-
-```text
-GET /web/api/wot-cv/auth/wargaming
-```
-
-The backend creates a short-lived, single-use login transaction, sets a secure correlation cookie and redirects the browser to Wargaming. After authentication, Wargaming redirects the browser to the backend callback:
-
-```text
-GET /web/api/wot-cv/auth/wargaming/callback
-```
-
-The backend validates the OpenID response directly with Wargaming, verifies the claimed identity and protects the callback against replay. The frontend does not validate or process the OpenID assertion.
-
-```mermaid
-sequenceDiagram
-    autonumber
-
-    actor User
-    participant FE as WOT-CV web application
-    participant BE as WOT-CV backend
-    participant WG as Wargaming OpenID
-    participant DB as MongoDB
-
-    User->>FE: Select "Log in with Wargaming"
-    FE->>BE: Top-level GET /auth/wargaming
-    BE->>DB: Store hashes of state and correlation secret with TTL
-    BE-->>FE: Set HttpOnly correlation cookie and return 302
-    FE->>WG: Open Wargaming authentication page
-    User->>WG: Authenticate with Wargaming
-    WG-->>FE: Redirect to the backend callback
-    FE->>BE: GET /auth/wargaming/callback
-    BE->>DB: Atomically consume the login transaction
-
-    alt Authentication was cancelled
-        BE-->>FE: 303 /auth/complete#status=cancelled
-        FE-->>User: Return to the application
-    else OpenID response was returned
-        BE->>WG: check_authentication and identity discovery
-        WG-->>BE: Verification result
-        BE->>DB: Store a nonce hash to prevent replay
-
-        alt Existing WOT-CV user
-            BE->>DB: Create a server-backed refresh session
-            BE-->>FE: Set HttpOnly session cookies and return 303 /auth/complete#status=success
-            FE->>FE: Remove the URL fragment
-            FE->>BE: GET /users/me
-            BE-->>FE: User, customer and account type
-            FE-->>User: Open the authenticated application
-        else User is eligible to register a clan
-            BE->>DB: Store a hashed, short-lived registration session
-            BE-->>FE: Set HttpOnly registration cookie and return 303 /register
-            FE-->>User: Display registration consent
-            User->>FE: Accept consent
-            FE->>BE: GET /customers/registration
-            BE-->>FE: Clan and registration data
-            FE-->>User: Display the registration form
-            User->>FE: Configure and submit clan registration
-            FE->>BE: POST /customers/register
-            BE->>DB: Consume the session and create the customer configuration
-            BE->>DB: Create users, permissions, filters and initial account data
-            BE-->>FE: Clear registration cookie, set session cookies and return 201
-            FE->>BE: GET /users/me
-            BE-->>FE: Registered user and customer
-            FE-->>User: Confirm registration
-        else Login or registration is rejected
-            BE-->>FE: 303 /auth/complete#error=ERROR_CODE
-            FE->>FE: Remove the URL fragment
-            FE-->>User: Display a localised error
-        end
-    end
-```
-
-### Existing users
-
-An existing WOT-CV user receives a normal web session. Authentication data is stored in secure, HttpOnly cookies. The frontend then calls `/users/me` to load the authenticated user, customer and account type.
-
-### New clan registration
-
-A new user may register a clan when:
-
-- the player exists in the Wargaming API;
-- the player belongs to a clan;
-- that clan is not already registered in WOT-CV;
-- the player has a supported officer role.
-
-The backend creates a separate short-lived registration session. This is not yet a normal authenticated WOT-CV session.
-
-The registration page first displays the required consent. Registration data is requested only after the user accepts it. When the registration form is submitted, the backend atomically consumes the registration session, creates the customer configuration and starts a normal authenticated session.
-
-### Callback results
-
-The backend redirects the browser only with a fixed status or error code in the URL fragment. Authentication tokens and OpenID assertions are never included in that fragment. The frontend removes the fragment immediately after reading it.
-
-<a id="en-technologies"></a>
-
-## Technologies
-
-The tables below show the current major technology lines. Exact and binding versions are defined by each repository's `pom.xml`, `package.json`, lockfile and browser manifests.
-
-### Backend
-
-| Area | Technology |
-| --- | --- |
-| Language | Java 25 |
-| Framework | Spring Boot 4.1 |
-| Architecture | Multi-module Ports and Adapters |
-| Persistence | MongoDB and Spring Data MongoDB |
-| API documentation | OpenAPI and Springdoc |
-| Tests | Spock and WireMock |
-| Build | Maven |
-| Observability | OpenTelemetry and Logbook |
-| Concurrency | Virtual threads |
-
-### Data Refresher
-
-| Area | Technology |
-| --- | --- |
-| Language | Java 25 |
-| Framework | Spring Boot 4.1 |
-| Scheduling | Spring scheduling and dedicated executors |
-| Persistence | MongoDB and Spring Data MongoDB |
-| Migrations | Mongock |
-| External data | Wargaming API and configured data providers |
-| Tests | Spock and WireMock |
-| Build | Maven |
-| Observability | OpenTelemetry |
-
-### Web Application
-
-| Area | Technology |
-| --- | --- |
-| UI | React 19 |
-| Language | TypeScript 6 |
-| Component library | Material UI 9 |
-| State and API | Redux Toolkit and RTK Query |
-| Routing | React Router 7 |
-| Build | Vite 8 |
-| Forms | Formik |
-| Internationalisation | i18next |
-| Unit tests | Vitest and React Testing Library |
-| End-to-end tests | Playwright |
-| Package manager | Yarn 4 |
-| Runtime used by CI | Node.js 24 |
-
-### Browser Extension
-
-| Area | Technology |
-| --- | --- |
-| Platform | Chrome and Firefox Manifest V3 |
-| Language | TypeScript 6 |
-| Build | Vite 8 |
-| HTTP client | Axios |
-| Tests | Vitest |
-| Package manager | Yarn 4 |
-| Runtime used by CI | Node.js 24 |
+The application presents the available offer, purchase periods, prices and payment options. The Premium panel also includes payment history and referral features.
 
 <a id="en-user-requirements"></a>
 
-## User Requirements
+### Access for your clan team
 
-To register a clan in WOT-CV, a user must:
+Clan administrators can organize access by clan role and assign individual permissions. This lets the team decide who can change filters, manage the blocklist, edit invitation messages, view statistics or work with reserves.
 
-1. Have a [Wargaming.net](https://wargaming.net/) account.
-2. Be a member of a [World of Tanks](https://worldoftanks.eu/) clan.
-3. Hold one of the supported clan roles:
-   - Commander;
-   - Executive Officer;
-   - Personnel Officer;
-   - Combat Officer;
-   - Intelligence Officer;
-   - Quartermaster;
-   - Recruitment Officer;
-   - Junior Officer.
+Access to a feature depends on both the clan's plan and the user's permissions. Some actions also require an eligible role in the World of Tanks clan.
 
-Users of an already registered clan receive access according to permissions configured by the clan administrators.
+<a id="en-start"></a>
+<a id="en-authentication"></a>
+
+## How to get started
+
+1. Open [WOT-CV for World of Tanks clans](https://wot-cv.com) and explore the demo if you want to see the service first.
+2. Sign in through Wargaming with the account you use for your clan.
+3. If the clan already uses WOT-CV, continue with the access assigned to you. An eligible officer can register a new clan.
+4. Set the clan's recruitment requirements and organize access for the team.
+5. Review candidates in **Players to Check** and record recruitment decisions.
+6. Pair the browser extension if you want to use Premium invitation assistance.
+7. If you are responsible for reserves, open the reserve panel and complete its separate Wargaming authorization.
+
+You can use the web application without installing the recruitment extension. Install it when your team wants the invitation workflow it provides.
+
+<a id="en-user-experience"></a>
+
+## Demo, languages and everyday use
+
+The **WOT-CV demo** lets you explore the interface and example data before registering a real clan. Actions that would affect real players or reserves are restricted in the demo.
+
+The web application and extension support **eleven languages**:
+
+| Code | Language   |
+| ---- | ---------- |
+| `en` | English    |
+| `pl` | Polski     |
+| `de` | Deutsch    |
+| `cs` | Čeština    |
+| `uk` | Українська |
+| `ru` | Русский    |
+| `fr` | Français   |
+| `hu` | Magyar     |
+| `tr` | Türkçe     |
+| `es` | Español    |
+| `it` | Italiano   |
+
+The interface offers light and dark themes, layouts that adapt to the screen and table preferences for everyday use. The language selected in WOT-CV is also reflected in the extension.
+
+<a id="en-faq"></a>
+
+## Frequently asked questions
+
+### How can I find players for my World of Tanks clan?
+
+Set the clan's requirements in WOT-CV, then review the matching candidates in **Players to Check**. Combine player statistics with activity, language, vehicle availability and clan history to decide whom to invite.
+
+### Can I recruit using WN8 or WNX filters?
+
+Yes. WOT-CV supports WN8 and WNX as recruitment criteria, including overall and recent performance. You can combine the selected metric with other requirements instead of judging candidates by a single number.
+
+### Is WOT-CV free to use?
+
+A Free account provides core recruitment features with product limits. Premium adds advanced options such as vehicle-group filters, extension-assisted invitations, a shared message editor and clan reserve tools. The offer is available in the application.
+
+### What does the WOT-CV recruitment bot do?
+
+The browser extension assists with sending clan invitations through the Wargaming EU portal and reports the outcome. It uses the paired account and requires an active browser session, Premium access and compliance with the portal's invitation limits.
+
+### Do all recruiters have to write their own invitation message?
+
+No. Authorized users can maintain a shared clan recruitment message. It can be edited from the web application or extension popup, with support for handling simultaneous changes.
+
+### Can I manage clan reserves without the extension?
+
+Yes. Reserve tools are available in the web application. They require the appropriate access and a separate Wargaming authorization, and let an authorized officer manually activate an available reserve.
+
+### Can I try WOT-CV before registering my clan?
+
+Yes. Use the demo entry point on the website to explore example data and the main workflows.
+
+### Which World of Tanks region does WOT-CV support?
+
+WOT-CV focuses on the **EU region**, including invitations through the Wargaming EU clan portal.
 
 <a id="en-security"></a>
 
-## Security and Privacy
+## Account access and privacy
 
-- Wargaming authenticates the player; WOT-CV never receives the Wargaming password.
-- The backend validates OpenID responses directly with Wargaming.
-- Login state, correlation secrets, nonces and registration secrets are stored as hashes rather than raw values.
-- Login and registration transactions are short-lived and single-use.
-- Authentication and registration cookies are HttpOnly and Secure.
-- The frontend receives only fixed completion or error codes.
-- Public game and clan information is obtained through the official [Wargaming API](https://developers.wargaming.net/).
-- Authentication tokens are carried in secure backend cookies and are not exposed to frontend storage.
-- Browser-extension pairing is verified against the backend rather than inferred from a local cookie.
+Sign-in takes place through Wargaming. Enter your game password on Wargaming's website, and use the account that has the appropriate role in your clan.
 
-Security-sensitive reports must not include credentials, session cookies, pairing codes or personal data in a public issue. Use a private channel to contact the maintainers and rotate any credential that may already have been disclosed.
+Clan administrators control who can use the available tools. Reserve authorization is separate from ordinary sign-in and can be disconnected in the application.
 
-<a id="en-repositories"></a>
+The published [privacy policy](https://wot-cv.com/privacy-policy), [data protection notice](https://wot-cv.com/data-protection-notice) and [terms and conditions](https://wot-cv.com/terms-conditions) explain the service's rules and data-related information.
 
-## Repositories and Documentation
+<a id="en-support"></a>
 
-| Repository | Responsibility |
-| --- | --- |
-| [wot-cv-be](https://github.com/WoT-CV/wot-cv-be) | Backend APIs, authentication, authorization and business logic |
-| [wot-cv-fe](https://github.com/WoT-CV/wot-cv-fe) | React web application |
-| [wot-cv-data-refresher](https://github.com/WoT-CV/wot-cv-data-refresher) | Scheduled data refresh, migrations and maintenance |
-| [wot-cv-extension](https://github.com/WoT-CV/wot-cv-extension) | Chrome and Firefox browser extension |
+## News, community and support
 
-Documentation has explicit ownership:
+Read [WOT-CV product news](https://wot-cv.com/news) for information about features and improvements. Signed-in users can also suggest ideas, vote and discuss proposals through the community roadmap.
 
-- this organization profile explains the product and the relationships between applications;
-- each repository README is the entry point for its architecture, local setup, tests, operational constraints and troubleshooting;
-- backend OpenAPI documents are the source of truth for HTTP paths, methods, payloads and enums;
-- `pom.xml`, `package.json`, lockfiles and browser manifests are the source of truth for exact dependency and platform versions;
-- runtime configuration files and deployment secrets define environment-specific behaviour, but secrets must never be copied into documentation.
+For help with the service, use the in-application chat or contact [support@wot-cv.com](mailto:support@wot-cv.com). Describe the action you were trying to complete and the message shown on screen. Keep account credentials and other private information out of public reports.
 
-Cross-application changes should update all affected READMEs and generated API clients in the same coordinated release.
+**[Explore WOT-CV and start recruiting for your clan](https://wot-cv.com).**
+
+<a id="en-technologies"></a>
+
+## Technology and engineering
+
+WOT-CV is a full-stack product that combines web development, Java services, data processing and browser integrations. We develop the user experience alongside the business logic, integrations and automated tests that support it.
+
+### Four complementary applications
+
+| Project                                                                                 | Main technologies                                     | Engineering scope                                                                                   |
+| --------------------------------------------------------------------------------------- | ----------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| [Web application — wot-cv-fe](https://github.com/WoT-CV/wot-cv-fe)                      | **React 19**, **TypeScript 6**, Material UI 9, Vite 8 | Responsive interfaces, interactive data views and recruitment workflows.                            |
+| [Backend — wot-cv-be](https://github.com/WoT-CV/wot-cv-be)                              | **Java 25**, **Spring Boot 4**, MongoDB               | Application APIs, business rules, access control and product integrations.                          |
+| [Data service — wot-cv-data-refresher](https://github.com/WoT-CV/wot-cv-data-refresher) | **Java 25**, **Spring Boot 4**, Spring Data MongoDB   | Game-data processing and keeping the information used by the product up to date.                    |
+| [Browser extension — wot-cv-extension](https://github.com/WoT-CV/wot-cv-extension)      | **TypeScript 6**, WebExtensions, Manifest V3, Vite 8  | Chrome and Firefox integration, browser interactions and workflows shared with the web application. |
+
+### How we approach development
+
+- **Modular design.** Java applications follow Ports and Adapters, separating business rules from integration details. The frontend organizes components and logic around product features.
+- **Typed application contracts.** OpenAPI and generated TypeScript types support API integration; Redux Toolkit and RTK Query organize frontend state and data access.
+- **Forms and user experience.** Material UI, React Hook Form and Yup support consistent interfaces and validation. We account for loading states, errors and concurrent edits in everyday workflows.
+- **Internationalization.** i18next supports eleven interface languages, with attention to translated content, dates and consistency between the application and extension.
+
+### Quality and development tools
+
+| Area                        | Tools                        | Purpose                                                                               |
+| --------------------------- | ---------------------------- | ------------------------------------------------------------------------------------- |
+| Java testing                | Spock, WireMock              | Verify business behaviour and interactions with external services.                    |
+| Web application testing     | Vitest, Testing Library, MSW | Exercise frontend logic, UI behaviour and API interactions.                           |
+| Extension testing           | Vitest, JSDOM, MSW           | Verify extension behaviour and browser interactions in a controlled test environment. |
+| Browser testing             | Playwright                   | Check web-application workflows in Chromium, Firefox and WebKit.                      |
+| Mutation testing            | PIT, Stryker                 | Assess how effectively tests detect changes in application behaviour.                 |
+| Code consistency            | TypeScript, ESLint, Prettier | Check types and keep a consistent code style.                                         |
+| Application instrumentation | OpenTelemetry, Micrometer    | Provide tracing and metrics for understanding application behaviour.                  |
+
+Maven supports the Java projects, while Vite and Yarn support the web application and extension. GitHub Actions automates build, test and code-quality checks for the frontend and extension.
 
 <a id="en-authors"></a>
-
-## Authors
-
-[Daniel Owczarczyk](https://www.linkedin.com/in/daniel-owczarczyk-8b89a6150) and [Marek Brajerski](https://www.linkedin.com/in/marek-brajerski)
-
 <a id="en-license"></a>
 
-## License and Trademarks
+## About the project
 
-WOT-CV is a hobby project. Licensing or distribution terms, where applicable, are defined in the individual repositories.
+WOT-CV is an independent hobby project created by [Daniel Owczarczyk](https://www.linkedin.com/in/daniel-owczarczyk-8b89a6150) and [Marek Brajerski](https://www.linkedin.com/in/marek-brajerski).
 
-[World of Tanks](https://worldoftanks.eu/) and Wargaming-related names and marks belong to their respective owners. WOT-CV is not an official Wargaming product.
+The project brings our software-development experience into a product used by the World of Tanks community, combining feature design, implementation, integration and ongoing improvement.
+
+World of Tanks and Wargaming names and trademarks belong to their respective owners. WOT-CV is not an official Wargaming product. Service information is available in the [legal notice](https://wot-cv.com/legal-notice).
+
+Licensing and distribution terms, where applicable, are defined by the individual repositories. This profile does not grant redistribution rights.
 
 ---
 
 <a id="polski"></a>
 
-<div align="center">
+# WOT-CV — rekrutacja do klanów World of Tanks, statystyki graczy i narzędzia klanowe
 
-# [WOT-CV](https://wot-cv.com)
+[WOT-CV](https://wot-cv.com) to **narzędzie do rekrutacji do klanów World of Tanks** dla dowódców, oficerów i rekruterów na serwerze EU. Pomaga znaleźć odpowiednich graczy, porównać ich statystyki i pojazdy, koordynować zaproszenia oraz śledzić wyniki rekrutacji w jednym miejscu.
 
-### Platforma rekrutacyjna dla klanów [World of Tanks](https://worldoftanks.eu/)
+Dobierz rekrutację do graczy, których potrzebuje Twój klan. WOT-CV łączy **filtry WN8 i WNX**, wymagania dotyczące aktywności i czołgów, historię rekrutacji, rozszerzenie przeglądarkowe oraz obsługę rezerw klanowych. Zespół może poświęcić więcej czasu na ocenę kandydatów i mniej na przełączanie się między profilami.
 
-</div>
+Od strony developerskiej projekt łączy usługi Java i Spring Boot, aplikację React i TypeScript oraz rozwój rozszerzeń przeglądarkowych. Poznaj nasze [technologie i podejście inżynierskie](#pl-technologie).
 
 ## Spis treści
 
-1. [Opis](#pl-opis)
-2. [Zacznij tutaj](#pl-start)
-3. [Ekosystem](#pl-ekosystem)
-4. [Główne funkcjonalności](#pl-funkcjonalnosci)
-5. [Typy kont](#pl-typy-kont)
-6. [Logowanie i rejestracja klanu](#pl-logowanie)
-7. [Technologie](#pl-technologie)
-8. [Wymagania dla użytkowników](#pl-wymagania)
-9. [Bezpieczeństwo i prywatność](#pl-bezpieczenstwo)
-10. [Repozytoria i dokumentacja](#pl-repozytoria)
-11. [Autorzy](#pl-autorzy)
-12. [Licencja i znaki towarowe](#pl-licencja)
-
----
+1. [Dla kogo jest WOT-CV](#pl-opis)
+2. [Co Twój klan może zrobić z WOT-CV](#pl-funkcjonalnosci)
+3. [Znajdź graczy do klanu World of Tanks](#pl-rekrutacja)
+4. [Historia rekrutacji i statystyki zespołu](#pl-historia)
+5. [Lista zablokowanych graczy i klanów](#pl-lista-zablokowanych)
+6. [Wtyczka rekrutacyjna i wiadomości zaproszeń](#pl-rozszerzenie)
+7. [Rezerwy klanowe w World of Tanks](#pl-rezerwy)
+8. [Konto Free i Premium](#pl-typy-kont)
+9. [Jak zacząć](#pl-start)
+10. [Demo, języki i codzienne korzystanie](#pl-interfejs)
+11. [Najczęściej zadawane pytania](#pl-faq)
+12. [Dostęp do konta i prywatność](#pl-bezpieczenstwo)
+13. [Aktualności, społeczność i wsparcie](#pl-wsparcie)
+14. [Technologie i podejście inżynierskie](#pl-technologie)
+15. [O projekcie](#pl-autorzy)
 
 <a id="pl-opis"></a>
 
-## Opis
+## Dla kogo jest WOT-CV
 
-[WOT-CV](https://wot-cv.com) jest ekosystemem aplikacji wspierających rekrutację graczy do klanów w grze [World of Tanks](https://worldoftanks.eu/).
+Rekrutacja do klanu World of Tanks wymaga sprawdzenia czegoś więcej niż wysokiej oceny gracza. Liczą się również jego ostatnia aktywność, dostępne czołgi, historia klanowa i język komunikacji. WOT-CV pozwala uwzględnić te informacje we wspólnej pracy rekruterów.
 
-Platforma pomaga członkom sztabu klanu wyszukiwać potencjalnych rekrutów, stosować konfigurowalne kryteria rekrutacyjne, analizować kandydatów, zarządzać dostępem członków klanu, sprawdzać skuteczność rekrutacji oraz automatyzować wybrane czynności przy użyciu rozszerzenia przeglądarki.
+- **Dowódcy i oficerowie wykonawczy** mogą określać wymagania rekrutacyjne, organizować dostęp i śledzić wyniki zespołu.
+- **Oficerowie rekrutacyjni i rekruterzy** mogą oceniać kandydatów, przygotowywać zaproszenia i sprawdzać wcześniejsze decyzje.
+- **Osoby odpowiedzialne za rezerwy klanowe** mogą sprawdzać ich dostępność, liczbę graczy online i aktywować rezerwy z panelu klanu.
 
-WOT-CV powstało jako projekt hobbystyczny [Daniela Owczarczyka](https://www.linkedin.com/in/daniel-owczarczyk-8b89a6150) i [Marka Brajerskiego](https://www.linkedin.com/in/marek-brajerski).
-
-<a id="pl-start"></a>
-
-## Zacznij tutaj
-
-1. Otwórz [wot-cv.com](https://wot-cv.com).
-2. Wybierz logowanie przez Wargaming. Uwierzytelnienie odbywa się na stronie Wargaming, a powrót prowadzi przez backend WOT-CV.
-3. Jeżeli klan jest już zarejestrowany, WOT-CV otworzy aplikację z uprawnieniami przypisanymi do konta.
-4. Jeżeli klan nie jest zarejestrowany, a użytkownik ma obsługiwaną rolę oficerską, należy zaakceptować zgodę rejestracyjną, sprawdzić wykryte dane klanu i zakończyć konfigurację początkową.
-5. Skonfiguruj filtry rekrutacyjne oraz dostęp członków klanu.
-6. Opcjonalnie zainstaluj [rozszerzenie przeglądarki WOT-CV](https://github.com/WoT-CV/wot-cv-extension), aby automatyzować zaproszenia w portalu klanowym Wargaming.
-
-Rozszerzenie jest opcjonalne. Aplikacja webowa, backend i data-refresher dostarczają podstawowy proces rekrutacyjny.
-
-<a id="pl-ekosystem"></a>
-
-## Ekosystem
-
-WOT-CV składa się z czterech współpracujących aplikacji:
-
-- **Aplikacja webowa** — interfejs używany przez rekruterów i członków sztabu klanu.
-- **Backend** — publiczne API, logowanie, autoryzacja i logika biznesowa.
-- **Data refresher** — cykliczne pobieranie i przetwarzanie danych, migracje oraz utrzymanie danych.
-- **Rozszerzenie przeglądarki** — integracja z portalem klanowym Wargaming i automatyczne zapraszanie.
-
-```mermaid
-flowchart LR
-    USER[Rekruter lub oficer klanu]
-    FE[Aplikacja webowa WOT-CV]
-    BE[Backend WOT-CV]
-    REFRESHER[WOT-CV data refresher]
-    EXT[Rozszerzenie WOT-CV]
-    DB[(MongoDB)]
-    WG_OPENID[Wargaming OpenID]
-    WG_API[Wargaming API]
-    WG_PORTAL[Portal klanowy Wargaming]
-
-    USER --> FE
-    USER --> EXT
-    FE --> BE
-    EXT --> BE
-    EXT --> WG_PORTAL
-    BE --> DB
-    BE --> REFRESHER
-    REFRESHER --> DB
-    REFRESHER --> WG_API
-    BE --> WG_OPENID
-```
-
-Kierunek integracji jest celowy: backend może wywoływać wybrane operacje data-refreshera, natomiast data-refresher nie wywołuje backendu przez REST.
+Filtry można dopasować zarówno do rozbudowy aktywnego składu, jak i poszukiwania graczy z określonymi pojazdami. WOT-CV jest przeznaczone dla **World of Tanks EU**.
 
 <a id="pl-funkcjonalnosci"></a>
 
-## Główne funkcjonalności
+## Co Twój klan może zrobić z WOT-CV
 
-- **Wyszukiwanie potencjalnych rekrutów** — odnajdywanie graczy, którzy mogą spełniać wymagania klanu.
-- **Zaawansowane filtry rekrutacyjne** — kryteria oparte na statystykach, aktywności, pojazdach i języku komunikacji.
-- **Lista graczy do sprawdzenia** — uporządkowany proces analizowania kandydatów.
-- **Historia rekrutacji** — zapis wcześniej przeanalizowanych graczy.
-- **Statystyki rekrutacji** — informacje o skuteczności działań rekrutacyjnych.
-- **Administracja klanem** — zarządzanie dostępem i uprawnieniami członków klanu.
-- **Lista zablokowanych graczy i klanów** — zapobieganie ponownemu pojawianiu się nieodpowiednich kandydatów.
-- **Rozszerzenie przeglądarki** — automatyzacja zaproszeń z portalu klanowego Wargaming.
-- **Wielojęzyczność** — interfejs angielski, polski, niemiecki, czeski i rosyjski.
+| Cel                                | Jak pomaga WOT-CV                                                                               |
+| ---------------------------------- | ----------------------------------------------------------------------------------------------- |
+| Znaleźć odpowiednich rekrutów      | Dopasowanie kandydatów do wymagań dotyczących umiejętności, aktywności, języka i pojazdów.      |
+| Sprawdzić statystyki graczy        | Porównanie wyników ogólnych i ostatnich, WN8/WNX, doświadczenia bitewnego i dostępnych czołgów. |
+| Dopasować wymagania rekrutacyjne   | Oszacowanie puli kandydatów i wskazanie filtrów, które najbardziej ją zawężają.                 |
+| Koordynować kilku rekruterów       | Wspólna historia, decyzje rekrutacyjne i spójna wiadomość zaproszenia.                          |
+| Śledzić wyniki rekrutacji          | Podgląd zaproszeń, graczy, którzy dołączyli, oraz wyników według okresu lub rekrutera.          |
+| Pomijać nieodpowiednich kandydatów | Lista zablokowanych graczy i klanów z powodami oraz ustawieniami widoczności.                   |
+| Sprawniej wysyłać zaproszenia      | Sparowana wtyczka wspierająca wysyłanie zaproszeń przez portal klanowy Wargaming.               |
+| Obsługiwać rezerwy klanowe         | Magazyn i aktywne rezerwy, liczba graczy online oraz aktywacja wybranej rezerwy.                |
+| Organizować dostęp do narzędzi     | Przydzielanie dostępu i odpowiedzialności osobom pracującym na rzecz klanu.                     |
+| Poznać serwis                      | Wersja demonstracyjna i jedenaście języków interfejsu.                                          |
+
+Część funkcji wymaga konta Premium lub odpowiednich uprawnień klanowych. Aplikacja pokazuje opcje dostępne dla Twojego klanu.
+
+<a id="pl-rekrutacja"></a>
+
+## Znajdź graczy do klanu World of Tanks
+
+### Filtry rekrutacyjne dopasowane do wymagań
+
+WOT-CV pomaga wyszukiwać kandydatów z uwzględnieniem różnych elementów ich profilu. Wymagania dotyczące wyników i aktywności można połączyć z pojazdami oraz językami ważnymi dla Twojego klanu.
+
+| Obszar                    | Co możesz uwzględnić                                                                    |
+| ------------------------- | --------------------------------------------------------------------------------------- |
+| Wyniki gracza             | WN8 lub WNX, statystyki ogólne i ostatnie oraz ocenę osobistą.                          |
+| Aktywność i doświadczenie | Ostatnią aktywność, bitwy losowe i doświadczenie w bitwach klanowych.                   |
+| Historia klanowa          | Czas bez klanu, wcześniejsze członkostwo i okresy oczekiwania przed ponowną rekrutacją. |
+| Komunikacja               | Preferowane języki oraz graczy wielojęzycznych.                                         |
+| Pojazdy                   | Wybrane meta czołgi, wymagane pojazdy i grupy czołgów VI, VIII oraz X poziomu.          |
+| Wyniki na pojazdach       | Doświadczenie bitewne, obrażenia, asystę i wyniki na czołgach istotnych dla klanu.      |
+
+Klan przygotowujący się do rozgrywek zorganizowanych może szukać aktywnych graczy z odpowiednimi pojazdami. Zespół nastawiony na regularną wspólną grę może położyć większy nacisk na ostatnią aktywność i język. Filtry pozwalają uwzględnić te różnice, zamiast opierać decyzję wyłącznie na jednej ocenie.
+
+Estymacja liczby kandydatów i podpowiedzi dotyczące wpływu filtrów pomagają zauważyć zbyt wąskie wymagania. Zaawansowane filtry pojazdów są dostępne w ramach Premium.
+
+### Od oceny kandydata do zaproszenia
+
+Widok **Gracze do sprawdzenia** zbiera informacje potrzebne do oceny potencjalnego rekruta:
+
+- ogólne i ostatnie statystyki gracza;
+- posiadane pojazdy oraz osiągane na nich wyniki;
+- historię klanową i informacje przydatne w rekrutacji;
+- odnośniki do profilu gracza;
+- działania umożliwiające zaproszenie, odrzucenie, czasowe pominięcie lub zablokowanie kandydata.
+
+Rekruter może przejrzeć profil i zapisać decyzję. Dzięki wtyczce uprawnione osoby mogą także obsługiwać zaproszenia przez portal Wargaming i sprawdzać ich wyniki w WOT-CV.
+
+Statystyki i przynależność klanowa graczy zmieniają się wraz z ich aktywnością. Informacje widoczne w aplikacji pomagają w podjęciu decyzji; samo wysłanie zaproszenia jest osobnym zdarzeniem od dołączenia gracza do klanu.
+
+<a id="pl-historia"></a>
+
+## Historia rekrutacji i statystyki zespołu
+
+Wspólna historia rekrutacji pozwala sprawdzić, kto był już oceniany i co wydarzyło się później. Rekruterzy mogą wrócić do wcześniejszych decyzji, odnaleźć czasowo pominiętych kandydatów i przywrócić odpowiednich graczy do ponownego sprawdzenia.
+
+Statystyki rekrutacji pomagają dowódcom i oficerom śledzić pracę zespołu:
+
+- przeglądać wyniki ogólne, roczne, miesięczne i tygodniowe;
+- porównywać aktywność oraz rezultaty poszczególnych rekruterów;
+- obserwować zaproszenia i graczy, którzy dołączyli do klanu;
+- oceniać przebieg rekrutacji i dopasowywać priorytety zespołu.
+
+Historia dostępna w jednym miejscu ułatwia przekazywanie pracy między rekruterami i daje klanowi wspólny zapis prowadzonych działań.
+
+<a id="pl-lista-zablokowanych"></a>
+
+## Lista zablokowanych graczy i klanów
+
+Klan może prowadzić listę graczy i klanów, których chce unikać w rekrutacji lub oznaczyć do szczególnej uwagi. Powody zapisane przy wpisach pomagają innym rekruterom zrozumieć wcześniejsze decyzje.
+
+Dwa sposoby wyświetlania wspierają różne potrzeby zespołu:
+
+- **Ukrywanie zablokowanych kandydatów**, gdy rekruterzy mają skupić się na pozostałych graczach.
+- **Wyświetlanie ostrzeżenia**, gdy kandydat ma pozostać widoczny razem z powodem blokady.
+
+Reguły związane z klanami mogą również uwzględniać historię członkostwa i ustawiony okres po opuszczeniu zablokowanego klanu. Uprawnione osoby mogą zarządzać wpisami, powodami i ustawieniami listy.
+
+Automatyczne zapraszanie pomija zablokowanych kandydatów, również tych wyświetlanych z ostrzeżeniem.
+
+<a id="pl-rozszerzenie"></a>
+
+## Wtyczka rekrutacyjna i wiadomości zaproszeń
+
+### Rozszerzenie przeglądarkowe dla rekruterów
+
+**Wtyczka rekrutacyjna WOT-CV** pomaga wysyłać zaproszenia przez portal klanowy Wargaming EU. Jest dostępna w [Chrome Web Store](https://chromewebstore.google.com/detail/wot-cv-bot-rekrutacyjny/egpehblnoofhlccabcnlljefmjccejik) i [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/wot-cv-recruitbot). Obsługiwane przeglądarki oparte na Chromium obejmują Chrome, Edge i Operę.
+
+Sparuj rozszerzenie z kontem WOT-CV według instrukcji na stronie **Wtyczka**. Popup pokazuje stan połączenia i pomaga rozpoznać sytuacje wymagające uwagi użytkownika.
+
+Obsługa zaproszeń wymaga Premium, sparowanej wtyczki i zalogowania w przeglądarce na właściwe konto Wargaming. Wyniki informują, czy zaproszenie zostało wysłane, czy przeszkodziło w tym ograniczenie portalu. Proces respektuje limity zaproszeń Wargaming.
+
+### Wspólna wiadomość rekrutacyjna
+
+Klan może utrzymywać jedną wiadomość zaproszenia dla całego zespołu rekruterów. Uprawnione osoby mogą edytować ją w WOT-CV lub w popupie rozszerzenia.
+
+- Przygotuj tekst do **500 znaków** albo pozostaw puste pole, aby wysłać zaproszenie bez dodatkowej wiadomości.
+- Zachowaj spójny opis klanu i jego oczekiwań niezależnie od osoby prowadzącej rekrutację.
+- Zobacz, kiedy inny rekruter zmienił zapisaną wiadomość.
+- Rozstrzygaj równoczesne zmiany, zachowując kontrolę nad własnym szkicem.
+- Zamknij i otwórz popup w tej samej sesji przeglądarki bez utraty zapisanego szkicu.
+
+Przydatna wiadomość rekrutacyjna przedstawia klan, opisuje jego ofertę i wskazuje graczowi kolejny krok. Edytor ułatwia zespołowi ponowne wykorzystywanie oraz aktualizowanie tego tekstu wraz ze zmianą priorytetów rekrutacji.
+
+<a id="pl-rezerwy"></a>
+
+## Rezerwy klanowe w World of Tanks
+
+Panel rezerw klanowych pozwala uprawnionym oficerom wygodnie sprawdzać i **ręcznie aktywować rezerwy klanowe**.
+
+Możesz:
+
+- przeglądać dostępne rezerwy, ich poziomy, liczbę sztuk, czas trwania i premie;
+- sprawdzać, które rezerwy są aktywne;
+- zobaczyć liczbę członków klanu online, w tym rezerwistów;
+- wybrać dostępny poziom rezerwy i potwierdzić aktywację;
+- przejrzeć historię aktywacji i zgłoszony wynik operacji.
+
+Obsługiwane typy rezerw to **Zapłaty za bitwę**, **Manewry wojskowe**, **Szkolenie taktyczne** i **Dodatkowa odprawa**.
+
+Dostęp do rezerw wymaga Premium, odpowiednich uprawnień klanowych i osobnej autoryzacji przez Wargaming. Aplikacja prowadzi odpowiedzialnego oficera przez połączenie konta. Korzystanie z panelu rezerw nie wymaga wtyczki rekrutacyjnej.
 
 <a id="pl-typy-kont"></a>
 
-## Typy kont
+## Konto Free i Premium
 
-WOT-CV wykorzystuje trzy typy kont:
+Możesz zacząć od podstawowych funkcji rekrutacji, a następnie wybrać Premium, gdy klan potrzebuje szerszego zestawu narzędzi.
 
-| Typ konta | Opis |
-| --- | --- |
-| **FREE** | Dostęp do podstawowego procesu rekrutacji z limitami produktu. |
-| **PREMIUM** | Dostęp do funkcjonalności premium oraz rozszerzonych lub nielimitowanych limitów. |
-| **TESTER** | Działa jak konto premium i może dodatkowo otrzymywać funkcjonalności przeznaczone wyłącznie dla testerów. |
+| Obszar                                      | Free                        | Premium                                                     |
+| ------------------------------------------- | --------------------------- | ----------------------------------------------------------- |
+| Sprawdzanie kandydatów                      | Ograniczona pula kandydatów | Rozszerzona obsługa rekrutacji                              |
+| Podstawowe filtry rekrutacyjne              | Dostępne                    | Dostępne                                                    |
+| Zaawansowane filtry pojazdów i grup czołgów | Niedostępne                 | Dostępne                                                    |
+| Automatyczne zaproszenia z wtyczką          | Niedostępne                 | Dostępne po sparowaniu                                      |
+| Edytor wspólnej wiadomości zaproszenia      | Niedostępny                 | Dostępny uprawnionym użytkownikom                           |
+| Narzędzia rezerw klanowych                  | Podgląd w demo              | Dostępne z wymaganymi uprawnieniami i autoryzacją Wargaming |
 
-`PREMIUM` i `TESTER` są traktowane identycznie, gdy funkcjonalność wymaga dostępu premium. Osobny typ `TESTER` pozwala udostępniać wybrane eksperymentalne funkcje testerom przed szerszym wdrożeniem.
-
-<a id="pl-logowanie"></a>
-
-## Logowanie i rejestracja klanu
-
-WOT-CV wykorzystuje **Wargaming OpenID 2.0**. Użytkownik jest uwierzytelniany przez Wargaming, dlatego WOT-CV nigdy nie otrzymuje jego hasła do konta Wargaming.
-
-Frontend rozpoczyna logowanie poprzez pełną nawigację przeglądarki do:
-
-```text
-GET /web/api/wot-cv/auth/wargaming
-```
-
-Backend tworzy krótkotrwałą, jednorazową transakcję logowania, ustawia bezpieczne cookie korelacyjne i przekierowuje przeglądarkę do Wargaming. Po uwierzytelnieniu Wargaming przekierowuje przeglądarkę do callbacku backendu:
-
-```text
-GET /web/api/wot-cv/auth/wargaming/callback
-```
-
-Backend bezpośrednio weryfikuje odpowiedź OpenID w Wargaming, sprawdza potwierdzoną tożsamość i zabezpiecza callback przed ponownym wykorzystaniem. Frontend nie weryfikuje ani nie przetwarza odpowiedzi OpenID.
-
-```mermaid
-sequenceDiagram
-    autonumber
-
-    actor Uzytkownik as Użytkownik
-    participant FE as Aplikacja webowa WOT-CV
-    participant BE as Backend WOT-CV
-    participant WG as Wargaming OpenID
-    participant DB as MongoDB
-
-    Uzytkownik->>FE: Wybór "Zaloguj przez Wargaming"
-    FE->>BE: Pełna nawigacja GET /auth/wargaming
-    BE->>DB: Zapis hashy state i sekretu korelacyjnego z TTL
-    BE-->>FE: Ustawienie HttpOnly cookie i odpowiedź 302
-    FE->>WG: Otwarcie strony logowania Wargaming
-    Uzytkownik->>WG: Uwierzytelnienie w Wargaming
-    WG-->>FE: Przekierowanie do callbacku backendu
-    FE->>BE: GET /auth/wargaming/callback
-    BE->>DB: Atomowe zużycie transakcji logowania
-
-    alt Logowanie zostało anulowane
-        BE-->>FE: 303 /auth/complete#status=cancelled
-        FE-->>Uzytkownik: Powrót do aplikacji
-    else Wargaming zwrócił odpowiedź OpenID
-        BE->>WG: check_authentication i discovery tożsamości
-        WG-->>BE: Wynik weryfikacji
-        BE->>DB: Zapis hasha nonce chroniącego przed replay
-
-        alt Istniejący użytkownik WOT-CV
-            BE->>DB: Utworzenie serwerowej sesji refresh
-            BE-->>FE: Ustawienie HttpOnly cookies i 303 /auth/complete#status=success
-            FE->>FE: Usunięcie fragmentu z adresu
-            FE->>BE: GET /users/me
-            BE-->>FE: Użytkownik, klient i typ konta
-            FE-->>Uzytkownik: Otwarcie zalogowanej aplikacji
-        else Użytkownik może zarejestrować klan
-            BE->>DB: Zapis zahashowanej, krótkotrwałej sesji rejestracyjnej
-            BE-->>FE: Ustawienie HttpOnly cookie i 303 /register
-            FE-->>Uzytkownik: Wyświetlenie zgody rejestracyjnej
-            Uzytkownik->>FE: Zaakceptowanie zgody
-            FE->>BE: GET /customers/registration
-            BE-->>FE: Dane klanu i dane rejestracyjne
-            FE-->>Uzytkownik: Wyświetlenie formularza rejestracji
-            Uzytkownik->>FE: Konfiguracja i wysłanie rejestracji
-            FE->>BE: POST /customers/register
-            BE->>DB: Zużycie sesji i utworzenie konfiguracji klienta
-            BE->>DB: Utworzenie użytkowników, uprawnień, filtrów i danych konta
-            BE-->>FE: Usunięcie cookie rejestracji, ustawienie cookies sesji i 201
-            FE->>BE: GET /users/me
-            BE-->>FE: Zarejestrowany użytkownik i klient
-            FE-->>Uzytkownik: Potwierdzenie rejestracji
-        else Logowanie lub rejestracja zostały odrzucone
-            BE-->>FE: 303 /auth/complete#error=ERROR_CODE
-            FE->>FE: Usunięcie fragmentu z adresu
-            FE-->>Uzytkownik: Wyświetlenie przetłumaczonego błędu
-        end
-    end
-```
-
-### Istniejący użytkownicy
-
-Istniejący użytkownik WOT-CV otrzymuje normalną sesję webową. Dane uwierzytelnienia znajdują się w bezpiecznych cookies HttpOnly. Frontend wywołuje następnie `/users/me`, aby pobrać użytkownika, klienta i typ konta.
-
-### Rejestracja nowego klanu
-
-Nowy użytkownik może zarejestrować klan, jeżeli:
-
-- gracz istnieje w Wargaming API;
-- gracz należy do klanu;
-- klan nie jest jeszcze zarejestrowany w WOT-CV;
-- gracz ma obsługiwaną rolę oficerską.
-
-Backend tworzy osobną, krótkotrwałą sesję rejestracyjną. Na tym etapie nie jest to jeszcze normalna sesja zalogowanego użytkownika WOT-CV.
-
-Strona rejestracji najpierw wyświetla wymaganą zgodę. Dane rejestracyjne są pobierane dopiero po jej zaakceptowaniu. Po wysłaniu formularza backend atomowo zużywa sesję rejestracyjną, tworzy konfigurację klienta i rozpoczyna zwykłą sesję zalogowanego użytkownika.
-
-### Wynik callbacku
-
-Backend przekazuje frontendowi wyłącznie stały status lub kod błędu umieszczony we fragmencie adresu. Tokeny uwierzytelniające i odpowiedź OpenID nigdy nie są umieszczane w tym fragmencie. Frontend usuwa fragment natychmiast po jego odczytaniu.
-
-<a id="pl-technologie"></a>
-
-## Technologie
-
-Poniższe tabele pokazują aktualne główne linie technologiczne. Dokładne i wiążące wersje znajdują się w plikach `pom.xml`, `package.json`, lockfile'ach i manifestach przeglądarek poszczególnych repozytoriów.
-
-### Backend
-
-| Obszar | Technologia |
-| --- | --- |
-| Język | Java 25 |
-| Framework | Spring Boot 4.1 |
-| Architektura | Wielomodułowe Ports and Adapters |
-| Baza danych | MongoDB i Spring Data MongoDB |
-| Dokumentacja API | OpenAPI i Springdoc |
-| Testy | Spock i WireMock |
-| Budowanie | Maven |
-| Obserwowalność | OpenTelemetry i Logbook |
-| Współbieżność | Wątki wirtualne |
-
-### Data Refresher
-
-| Obszar | Technologia |
-| --- | --- |
-| Język | Java 25 |
-| Framework | Spring Boot 4.1 |
-| Harmonogramy | Spring Scheduling i dedykowane executory |
-| Baza danych | MongoDB i Spring Data MongoDB |
-| Migracje | Mongock |
-| Dane zewnętrzne | Wargaming API i skonfigurowani dostawcy danych |
-| Testy | Spock i WireMock |
-| Budowanie | Maven |
-| Obserwowalność | OpenTelemetry |
-
-### Aplikacja webowa
-
-| Obszar | Technologia |
-| --- | --- |
-| UI | React 19 |
-| Język | TypeScript 6 |
-| Biblioteka komponentów | Material UI 9 |
-| Stan i API | Redux Toolkit i RTK Query |
-| Routing | React Router 7 |
-| Budowanie | Vite 8 |
-| Formularze | Formik |
-| Tłumaczenia | i18next |
-| Testy jednostkowe | Vitest i React Testing Library |
-| Testy E2E | Playwright |
-| Menedżer pakietów | Yarn 4 |
-| Wersja Node.js w CI | Node.js 24 |
-
-### Rozszerzenie przeglądarki
-
-| Obszar | Technologia |
-| --- | --- |
-| Platforma | Chrome i Firefox Manifest V3 |
-| Język | TypeScript 6 |
-| Budowanie | Vite 8 |
-| Klient HTTP | Axios |
-| Testy | Vitest |
-| Menedżer pakietów | Yarn 4 |
-| Wersja Node.js w CI | Node.js 24 |
+Aplikacja przedstawia dostępną ofertę, okresy zakupu, ceny i metody płatności. Panel Premium zawiera również historię płatności oraz funkcje poleceń.
 
 <a id="pl-wymagania"></a>
 
-## Wymagania dla użytkowników
+### Dostęp dla zespołu klanowego
 
-Aby zarejestrować klan w WOT-CV, użytkownik musi:
+Administratorzy klanu mogą organizować dostęp według ról klanowych i przydzielać indywidualne uprawnienia. Zespół może ustalić, kto zmienia filtry, prowadzi listę zablokowanych, edytuje wiadomości, przegląda statystyki lub obsługuje rezerwy.
 
-1. Posiadać konto [Wargaming.net](https://wargaming.net/).
-2. Należeć do klanu w grze [World of Tanks](https://worldoftanks.eu/).
-3. Posiadać jedną z obsługiwanych ról:
-   - Dowódca;
-   - Oficer wykonawczy;
-   - Oficer kadrowy;
-   - Oficer polowy;
-   - Oficer wywiadu;
-   - Kwatermistrz;
-   - Oficer werbunkowy;
-   - Młodszy oficer.
+Dostępność funkcji zależy od planu klanu i uprawnień użytkownika. Wybrane działania wymagają również odpowiedniej roli w klanie World of Tanks.
 
-Członkowie już zarejestrowanego klanu otrzymują dostęp zgodnie z uprawnieniami skonfigurowanymi przez administratorów klanu.
+<a id="pl-start"></a>
+<a id="pl-logowanie"></a>
+
+## Jak zacząć
+
+1. Otwórz [WOT-CV dla klanów World of Tanks](https://wot-cv.com) i sprawdź demo, jeśli chcesz najpierw poznać serwis.
+2. Zaloguj się przez Wargaming na konto używane w swoim klanie.
+3. Jeśli klan korzysta już z WOT-CV, przejdź dalej z przydzielonym dostępem. Uprawniony oficer może zarejestrować nowy klan.
+4. Ustaw wymagania rekrutacyjne i zorganizuj dostęp dla zespołu.
+5. Oceniaj kandydatów w widoku **Gracze do sprawdzenia** i zapisuj decyzje rekrutacyjne.
+6. Sparuj wtyczkę, jeśli chcesz korzystać z obsługi zaproszeń dostępnej w Premium.
+7. Jeśli odpowiadasz za rezerwy, otwórz ich panel i wykonaj osobną autoryzację Wargaming.
+
+Z aplikacji webowej można korzystać bez instalowania wtyczki rekrutacyjnej. Zainstaluj ją, gdy zespół chce korzystać z udostępnianej przez nią obsługi zaproszeń.
+
+<a id="pl-interfejs"></a>
+
+## Demo, języki i codzienne korzystanie
+
+**Demo WOT-CV** pozwala poznać interfejs i przykładowe dane przed zarejestrowaniem rzeczywistego klanu. Działania wpływające na prawdziwych graczy lub rezerwy są w nim ograniczone.
+
+Aplikacja webowa i wtyczka obsługują **jedenaście języków**:
+
+| Kod  | Język      |
+| ---- | ---------- |
+| `en` | English    |
+| `pl` | Polski     |
+| `de` | Deutsch    |
+| `cs` | Čeština    |
+| `uk` | Українська |
+| `ru` | Русский    |
+| `fr` | Français   |
+| `hu` | Magyar     |
+| `tr` | Türkçe     |
+| `es` | Español    |
+| `it` | Italiano   |
+
+Interfejs oferuje jasny i ciemny motyw, układ dopasowujący się do ekranu oraz ustawienia tabel przydatne w codziennej pracy. Język wybrany w WOT-CV jest uwzględniany również we wtyczce.
+
+<a id="pl-faq"></a>
+
+## Najczęściej zadawane pytania
+
+### Jak znaleźć graczy do klanu World of Tanks?
+
+Ustaw wymagania klanu w WOT-CV, a następnie przeglądaj pasujących kandydatów w widoku **Gracze do sprawdzenia**. Połącz statystyki gracza z aktywnością, językiem, dostępnymi pojazdami i historią klanową, aby zdecydować, kogo zaprosić.
+
+### Czy można prowadzić rekrutację według WN8 lub WNX?
+
+Tak. WOT-CV obsługuje kryteria WN8 i WNX, obejmujące wyniki ogólne oraz ostatnie. Wybraną ocenę można połączyć z innymi wymaganiami, aby nie oceniać kandydata wyłącznie na podstawie jednej liczby.
+
+### Czy WOT-CV jest darmowe?
+
+Konto Free udostępnia podstawowe funkcje rekrutacji z limitami produktu. Premium dodaje zaawansowane opcje, takie jak filtry grup pojazdów, zaproszenia ze wsparciem wtyczki, wspólny edytor wiadomości i narzędzia rezerw klanowych. Oferta jest dostępna w aplikacji.
+
+### Co robi bot rekrutacyjny WOT-CV?
+
+Rozszerzenie przeglądarkowe pomaga wysyłać zaproszenia do klanu przez portal Wargaming EU i informuje o ich wyniku. Korzysta ze sparowanego konta oraz wymaga aktywnej sesji przeglądarki, Premium i przestrzegania limitów zaproszeń portalu.
+
+### Czy każdy rekruter musi pisać własną wiadomość zaproszenia?
+
+Nie. Uprawnione osoby mogą utrzymywać wspólną wiadomość rekrutacyjną klanu. Tekst można edytować w aplikacji lub popupie wtyczki, z obsługą równoczesnych zmian.
+
+### Czy można obsługiwać rezerwy klanowe bez wtyczki?
+
+Tak. Narzędzia rezerw są dostępne w aplikacji webowej. Wymagają odpowiedniego dostępu i osobnej autoryzacji Wargaming, a uprawniony oficer może ręcznie aktywować dostępną rezerwę.
+
+### Czy mogę wypróbować WOT-CV przed rejestracją klanu?
+
+Tak. Uruchom demo dostępne na stronie, aby poznać przykładowe dane i główne sposoby korzystania z serwisu.
+
+### Jaki region World of Tanks obsługuje WOT-CV?
+
+WOT-CV jest przeznaczone dla **regionu EU**, w tym do obsługi zaproszeń przez europejski portal klanowy Wargaming.
 
 <a id="pl-bezpieczenstwo"></a>
 
-## Bezpieczeństwo i prywatność
+## Dostęp do konta i prywatność
 
-- Użytkownika uwierzytelnia Wargaming; WOT-CV nigdy nie otrzymuje hasła do Wargaming.
-- Backend bezpośrednio weryfikuje odpowiedzi OpenID w Wargaming.
-- Stan logowania, sekrety korelacyjne, nonce i sekrety rejestracji są przechowywane jako hashe, a nie jako surowe wartości.
-- Transakcje logowania i rejestracji są krótkotrwałe i jednorazowe.
-- Cookies uwierzytelnienia i rejestracji są oznaczone jako HttpOnly i Secure.
-- Frontend otrzymuje wyłącznie stały status zakończenia albo kod błędu.
-- Publiczne dane dotyczące gry i klanów pochodzą z oficjalnego [Wargaming API](https://developers.wargaming.net/).
-- Tokeny uwierzytelniające są przenoszone w bezpiecznych cookies backendu i nie są udostępniane pamięci frontendu.
-- Stan sparowania rozszerzenia jest potwierdzany przez backend, a nie wywnioskowany z lokalnego cookie.
+Logowanie odbywa się przez Wargaming. Hasło do gry podajesz na stronie Wargaming, korzystając z konta, które ma odpowiednią rolę w Twoim klanie.
 
-Zgłoszenie dotyczące bezpieczeństwa nie może zawierać danych dostępowych, cookies sesji, kodów parowania ani danych osobowych w publicznym issue. Należy skontaktować się z maintainerami prywatnym kanałem i obrócić każde dane dostępowe, które mogły zostać ujawnione.
+Administratorzy klanu określają, kto może korzystać z narzędzi. Autoryzacja rezerw jest osobna względem zwykłego logowania i można ją rozłączyć w aplikacji.
 
-<a id="pl-repozytoria"></a>
+Opublikowane dokumenty — [polityka prywatności](https://wot-cv.com/privacy-policy), [informacja o ochronie danych](https://wot-cv.com/data-protection-notice) i [regulamin](https://wot-cv.com/terms-conditions) — opisują zasady korzystania z serwisu oraz informacje związane z danymi.
 
-## Repozytoria i dokumentacja
+<a id="pl-wsparcie"></a>
 
-| Repozytorium | Odpowiedzialność |
-| --- | --- |
-| [wot-cv-be](https://github.com/WoT-CV/wot-cv-be) | API, logowanie, autoryzacja i logika biznesowa |
-| [wot-cv-fe](https://github.com/WoT-CV/wot-cv-fe) | Aplikacja webowa React |
-| [wot-cv-data-refresher](https://github.com/WoT-CV/wot-cv-data-refresher) | Cykliczne odświeżanie danych, migracje i utrzymanie |
-| [wot-cv-extension](https://github.com/WoT-CV/wot-cv-extension) | Rozszerzenie dla Chrome i Firefox |
+## Aktualności, społeczność i wsparcie
 
-Dokumentacja ma jawnie określoną własność:
+W [aktualnościach WOT-CV](https://wot-cv.com/news) znajdziesz informacje o funkcjach i usprawnieniach. Zalogowani użytkownicy mogą również zgłaszać pomysły, głosować i dyskutować o propozycjach w roadmapie społeczności.
 
-- ten profil organizacji opisuje produkt i relacje między aplikacjami;
-- README każdego repozytorium jest punktem wejścia do jego architektury, uruchomienia lokalnego, testów, ograniczeń operacyjnych i diagnostyki;
-- dokumenty OpenAPI backendu są źródłem prawdy dla ścieżek HTTP, metod, payloadów i enumów;
-- `pom.xml`, `package.json`, lockfile'e i manifesty przeglądarek są źródłem prawdy dla dokładnych wersji zależności i platform;
-- pliki konfiguracji runtime i sekrety wdrożeniowe definiują zachowanie środowiska, ale sekretów nie wolno kopiować do dokumentacji.
+Pomoc dotyczącą serwisu uzyskasz przez czat w aplikacji lub pod adresem [support@wot-cv.com](mailto:support@wot-cv.com). Opisz wykonywaną czynność i komunikat widoczny na ekranie. Danych dostępowych i innych prywatnych informacji nie umieszczaj w publicznych zgłoszeniach.
 
-Zmiana obejmująca kilka aplikacji powinna aktualizować wszystkie dotknięte README i wygenerowane klienty API w ramach tego samego skoordynowanego release'u.
+**[Poznaj WOT-CV i rozpocznij rekrutację do swojego klanu](https://wot-cv.com).**
+
+<a id="pl-technologie"></a>
+
+## Technologie i podejście inżynierskie
+
+WOT-CV to produkt full-stack łączący tworzenie aplikacji webowych, usługi Java, przetwarzanie danych i integracje przeglądarkowe. Interfejs użytkownika rozwijamy razem z logiką biznesową, integracjami i testami automatycznymi, które wspierają jego działanie.
+
+### Cztery uzupełniające się aplikacje
+
+| Projekt                                                                                  | Główne technologie                                    | Zakres prac inżynierskich                                                                            |
+| ---------------------------------------------------------------------------------------- | ----------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| [Aplikacja webowa — wot-cv-fe](https://github.com/WoT-CV/wot-cv-fe)                      | **React 19**, **TypeScript 6**, Material UI 9, Vite 8 | Responsywne interfejsy, interaktywne widoki danych i procesy rekrutacyjne.                           |
+| [Backend — wot-cv-be](https://github.com/WoT-CV/wot-cv-be)                               | **Java 25**, **Spring Boot 4**, MongoDB               | API aplikacji, reguły biznesowe, kontrola dostępu i integracje produktu.                             |
+| [Usługa danych — wot-cv-data-refresher](https://github.com/WoT-CV/wot-cv-data-refresher) | **Java 25**, **Spring Boot 4**, Spring Data MongoDB   | Przetwarzanie danych gry i aktualizowanie informacji wykorzystywanych przez produkt.                 |
+| [Rozszerzenie — wot-cv-extension](https://github.com/WoT-CV/wot-cv-extension)            | **TypeScript 6**, WebExtensions, Manifest V3, Vite 8  | Integracja z Chrome i Firefox, interakcje w przeglądarce i procesy współdzielone z aplikacją webową. |
+
+### Jak podchodzimy do tworzenia oprogramowania
+
+- **Projektowanie modułowe.** Aplikacje Java korzystają z podejścia Ports and Adapters, które oddziela reguły biznesowe od szczegółów integracji. Frontend organizuje komponenty i logikę wokół funkcji produktu.
+- **Typowane kontrakty aplikacji.** OpenAPI i generowane typy TypeScript wspierają integrację z API, a Redux Toolkit i RTK Query porządkują stan oraz dostęp do danych we frontendzie.
+- **Formularze i doświadczenie użytkownika.** Material UI, React Hook Form i Yup wspierają spójność interfejsu oraz walidację. W codziennych procesach uwzględniamy stany ładowania, błędy i równoczesne zmiany.
+- **Wielojęzyczność.** i18next wspiera jedenaście języków interfejsu, z uwzględnieniem tłumaczeń, dat i spójności między aplikacją a rozszerzeniem.
+
+### Jakość i narzędzia developerskie
+
+| Obszar                   | Narzędzia                    | Cel                                                                                                    |
+| ------------------------ | ---------------------------- | ------------------------------------------------------------------------------------------------------ |
+| Testy Java               | Spock, WireMock              | Sprawdzanie zachowania logiki biznesowej i współpracy z usługami zewnętrznymi.                         |
+| Testy aplikacji webowej  | Vitest, Testing Library, MSW | Sprawdzanie logiki frontendu, zachowania interfejsu i współpracy z API.                                |
+| Testy rozszerzenia       | Vitest, JSDOM, MSW           | Sprawdzanie zachowania rozszerzenia i interakcji przeglądarkowych w kontrolowanym środowisku testowym. |
+| Testy przeglądarkowe     | Playwright                   | Sprawdzanie procesów aplikacji webowej w Chromium, Firefox i WebKit.                                   |
+| Testy mutacyjne          | PIT, Stryker                 | Ocena, czy testy wykrywają zmiany w zachowaniu aplikacji.                                              |
+| Spójność kodu            | TypeScript, ESLint, Prettier | Kontrola typów i utrzymywanie jednolitego stylu kodu.                                                  |
+| Instrumentacja aplikacji | OpenTelemetry, Micrometer    | Śledzenie wykonania i metryki pomagające zrozumieć działanie aplikacji.                                |
+
+Projekty Java korzystają z Mavena, a aplikacja webowa i rozszerzenie z Vite oraz Yarn. GitHub Actions automatyzuje budowanie, testy i kontrolę jakości frontendu oraz rozszerzenia.
 
 <a id="pl-autorzy"></a>
-
-## Autorzy
-
-[Daniel Owczarczyk](https://www.linkedin.com/in/daniel-owczarczyk-8b89a6150) i [Marek Brajerski](https://www.linkedin.com/in/marek-brajerski)
-
 <a id="pl-licencja"></a>
 
-## Licencja i znaki towarowe
+## O projekcie
 
-WOT-CV jest projektem hobbystycznym. Warunki licencjonowania lub dystrybucji, jeżeli mają zastosowanie, są określane w poszczególnych repozytoriach.
+WOT-CV jest niezależnym projektem hobbystycznym stworzonym przez [Daniela Owczarczyka](https://www.linkedin.com/in/daniel-owczarczyk-8b89a6150) i [Marka Brajerskiego](https://www.linkedin.com/in/marek-brajerski).
 
-Nazwy i znaki związane z [World of Tanks](https://worldoftanks.eu/) oraz Wargaming należą do ich właścicieli. WOT-CV nie jest oficjalnym produktem Wargaming.
+Projekt pozwala nam wykorzystywać doświadczenie developerskie w produkcie dla społeczności World of Tanks, łącząc projektowanie funkcji, implementację, integrację i dalsze doskonalenie aplikacji.
+
+World of Tanks i nazwy oraz znaki Wargaming należą do ich właścicieli. WOT-CV nie jest oficjalnym produktem Wargaming. Informacje o usługodawcy są dostępne w [informacjach prawnych](https://wot-cv.com/legal-notice).
+
+Warunki licencjonowania lub dystrybucji, jeżeli mają zastosowanie, są określane w poszczególnych repozytoriach. Ten profil nie przyznaje prawa do redystrybucji.
